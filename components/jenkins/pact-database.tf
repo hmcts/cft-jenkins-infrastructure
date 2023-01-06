@@ -2,7 +2,7 @@ data "azurerm_client_config" "this" {}
 
 module "ctags" {
   source       = "git::https://github.com/hmcts/terraform-module-common-tags.git?ref=master"
-  environment  = var.environment
+  environment  = var.env
   product      = var.product
   builtFrom    = var.builtFrom
   expiresAfter = "2023-01-01"
