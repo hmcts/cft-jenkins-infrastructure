@@ -1,6 +1,6 @@
 data "azurerm_client_config" "this" {}
 
-module "ctags" {
+module "tags" {
   source       = "git::https://github.com/hmcts/terraform-module-common-tags.git?ref=master"
   environment  = var.env
   product      = var.product
@@ -35,5 +35,5 @@ module "postgresql" {
 
   enable_read_only_group_access = false
 
-  common_tags = var.common_tags
+  common_tags = module.tags.common_tags
 }
