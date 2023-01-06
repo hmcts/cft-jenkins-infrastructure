@@ -12,6 +12,12 @@ locals {
   pact_broker_component = "pact-broker"
 }
 
+data "azurerm_subnet" "postgres" {
+  name                 = "postgresql"
+  resource_group_name  = "cft-${var.env}-network-rg"
+  virtual_network_name = "cft-${var.env}-vnet"
+}
+
 module "postgresql" {
   source = "git::https://github.com/hmcts/terraform-module-postgresql-flexible.git?ref=master"
   env    = var.env
@@ -26,6 +32,8 @@ module "postgresql" {
       name : "pact"
     }
   ]
+
+  pgsql_delegated_subnet_id = data.azurerm_subnet.postgres.id
 
   # Set your PostgreSQL version, note AzureAD auth requires version 12 (and not 11 or 13 currently)
   pgsql_version = "14"
