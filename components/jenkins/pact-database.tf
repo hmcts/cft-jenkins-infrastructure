@@ -51,6 +51,12 @@ data "azurerm_key_vault" "this" {
   resource_group_name = "core-infra-intsvc-rg"
 }
 
+resource "azurerm_key_vault_secret" "db_username" {
+  name         = "pact-db-user"
+  value        = module.postgresql.username
+  key_vault_id = data.azurerm_key_vault.this.id
+}
+
 resource "azurerm_key_vault_secret" "db_password" {
   name         = "pact-db-password"
   value        = module.postgresql.password
