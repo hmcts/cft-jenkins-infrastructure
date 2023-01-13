@@ -45,3 +45,14 @@ module "postgresql" {
 
   common_tags = module.tags.common_tags
 }
+
+data "azurerm_key_vault" "this" {
+  name                = var.key_vault_name
+  resource_group_name = "core-infra-intsvc-rg"
+}
+
+resource "azurerm_key_vault_secret" "db_password" {
+  name         = "pact-db-password"
+  value        = module.postgresql.password
+  key_vault_id = data.azurerm_key_vault.this.id
+}
