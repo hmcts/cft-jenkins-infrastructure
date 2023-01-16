@@ -22,3 +22,8 @@ variable "subscription_id" {
   description = "Subscription to run against"
   type        = string
 }
+
+variable "key_vault_name" {
+  description = "Key vault to store secrets in"
+  type        = string
+}
