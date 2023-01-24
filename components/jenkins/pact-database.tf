@@ -35,7 +35,6 @@ module "postgresql" {
 
   pgsql_delegated_subnet_id = data.azurerm_subnet.postgres.id
 
-  # Set your PostgreSQL version, note AzureAD auth requires version 12 (and not 11 or 13 currently)
   pgsql_version = "14"
 
   # The ID of the principal to be granted admin access to the database server, should be the principal running this normally
