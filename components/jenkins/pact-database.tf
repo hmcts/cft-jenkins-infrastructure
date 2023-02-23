@@ -36,6 +36,9 @@ module "postgresql" {
   pgsql_delegated_subnet_id = data.azurerm_subnet.postgres.id
 
   pgsql_version = "14"
+  # https://github.com/hmcts/terraform-module-postgresql-flexible/pull/28 changes collation to en_GB
+  # setting to en_US means we can skip migrating the data as the collation here doesn't matter much
+  collation = "en_US.utf8"
 
   # The ID of the principal to be granted admin access to the database server, should be the principal running this normally
   admin_user_object_id = data.azurerm_client_config.this.object_id
