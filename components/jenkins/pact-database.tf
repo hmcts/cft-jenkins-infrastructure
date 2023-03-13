@@ -5,7 +5,7 @@ module "tags" {
   environment  = var.env
   product      = var.product
   builtFrom    = var.builtFrom
-  expiresAfter = "2023-01-01"
+  expiresAfter = "3000-01-01"
 }
 
 locals {
