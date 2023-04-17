@@ -19,6 +19,11 @@ data "azurerm_subnet" "postgres" {
 }
 
 module "postgresql" {
+
+  providers = {
+    azurerm.postgres_network = azurerm.postgres_network
+  }
+
   source = "git::https://github.com/hmcts/terraform-module-postgresql-flexible.git?ref=master"
   env    = var.env
 
