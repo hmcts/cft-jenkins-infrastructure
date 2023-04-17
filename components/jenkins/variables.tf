@@ -27,5 +27,3 @@ variable "key_vault_name" {
   description = "Key vault to store secrets in"
   type        = string
 }
-
-variable "aks_subscription_id" {}
