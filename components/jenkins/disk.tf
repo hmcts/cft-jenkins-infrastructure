@@ -16,6 +16,6 @@ resource "azurerm_managed_disk" "disk" {
   trusted_launch_enabled     = false
   tier                       = "P30"
   # Hardcoded string literal taken from Azure, used to avoid terraform replacement of exising resource
-  source_resource_id         = var.jenkins_disk_source_resource_id
-  tags                       = module.tags.common_tags
+  source_resource_id = var.jenkins_disk_source_resource_id
+  tags               = module.tags.common_tags
 }
