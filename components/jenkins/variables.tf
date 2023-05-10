@@ -13,6 +13,11 @@ variable "location" {
   default     = "UK South"
 }
 
+variable "source_resource_id" {
+  description = "The ID of existing Managed Disk or Snapshot to copy"
+  type        = string
+}
+
 variable "builtFrom" {
   description = "Name of the GitHub repository this application is being built from."
   type        = string
