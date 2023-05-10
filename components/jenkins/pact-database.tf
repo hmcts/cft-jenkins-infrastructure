@@ -7,6 +7,10 @@ module "tags" {
   builtFrom    = var.builtFrom
   expiresAfter = "3000-01-01"
 }
+
+locals {
+  pact_broker_component = "pact-broker"
+}
 module "postgresql" {
 
   providers = {
