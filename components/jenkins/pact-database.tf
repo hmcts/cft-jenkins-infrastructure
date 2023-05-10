@@ -11,6 +11,7 @@ module "tags" {
 locals {
   pact_broker_component = "pact-broker"
 }
+
 module "postgresql" {
 
   providers = {
