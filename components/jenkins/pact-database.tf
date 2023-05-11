@@ -12,12 +12,6 @@ locals {
   pact_broker_component = "pact-broker"
 }
 
-data "azurerm_subnet" "postgres" {
-  name                 = "postgresql"
-  resource_group_name  = "cft-${var.env}-network-rg"
-  virtual_network_name = "cft-${var.env}-vnet"
-}
-
 module "postgresql" {
 
   providers = {
@@ -51,11 +45,6 @@ module "postgresql" {
   enable_read_only_group_access = false
 
   common_tags = module.tags.common_tags
-}
-
-data "azurerm_key_vault" "this" {
-  name                = var.key_vault_name
-  resource_group_name = "core-infra-intsvc-rg"
 }
 
 resource "azurerm_key_vault_secret" "db_username" {
