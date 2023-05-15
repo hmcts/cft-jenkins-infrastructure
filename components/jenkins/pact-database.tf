@@ -50,11 +50,11 @@ module "postgresql" {
 resource "azurerm_key_vault_secret" "db_username" {
   name         = "pact-db-user"
   value        = module.postgresql.username
-  key_vault_id = data.azurerm_key_vault.this.id
+  key_vault_id = azurerm_key_vault.jenkinskv.id
 }
 
 resource "azurerm_key_vault_secret" "db_password" {
   name         = "pact-db-password"
   value        = module.postgresql.password
-  key_vault_id = data.azurerm_key_vault.this.id
+  key_vault_id = azurerm_key_vault.jenkinskv.id
 }

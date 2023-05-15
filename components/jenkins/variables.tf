@@ -32,3 +32,9 @@ variable "key_vault_name" {
   description = "Key vault to store secrets in"
   type        = string
 }
+
+variable "key_vault_rg" {
+  description = "Resource group that holds the Jenkins Key Vault"
+  type        = string
+  default     = "core-infra-intsvc-rg"
+}
