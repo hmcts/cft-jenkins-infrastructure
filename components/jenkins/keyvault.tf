@@ -11,6 +11,7 @@ resource "azurerm_key_vault" "jenkinskv" {
   enable_rbac_authorization       = false
   tags                            = var.env == "ptlsbox" ? module.tags.common_tags : merge(module.tags.common_tags, local.ptl_kv_tags)
 }
+
 locals {
   ptl_kv_tags = {
     dataClassification = "internal"
