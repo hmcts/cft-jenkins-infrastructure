@@ -13,6 +13,13 @@ resource "azurerm_resource_group" "rg" {
   tags     = module.tags.common_tags
 }
 
+resource "azurerm_user_assigned_identity" "usermi" {
+  resource_group_name = data.azurerm_resource_group.mi.name
+  location            = var.location
+  name                = "jenkins-cftsbox-intsvc-mi"
+  tags                = module.tags.common_tags
+}
+
 resource "azurerm_cosmosdb_account" "cosmosdb" {
   name                      = "${local.suffix}-pipeline-metrics"
   location                  = var.location
