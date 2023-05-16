@@ -55,7 +55,7 @@ resource "azurerm_cosmosdb_sql_container" "cve-reports" {
   throughput            = 400
 
   indexing_policy {
-    indexing_mode = "Consistent"
+    indexing_mode = "consistent"
   }
 }
 
@@ -70,7 +70,7 @@ resource "azurerm_cosmosdb_sql_container" "container" {
   throughput            = 1000
 
   indexing_policy {
-    indexing_mode = "Consistent"
+    indexing_mode = "consistent"
   }
 }
 
