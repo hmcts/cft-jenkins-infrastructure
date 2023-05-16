@@ -1,4 +1,4 @@
-name: Generate terraform docs
+name: Auto-Generate Terraform Documentation
 on:
   - pull_request
 
@@ -10,7 +10,7 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.ref }}
 
-    - name: Render terraform docs and push changes back to PR
+    - name: Run terraform-docs and push changes to PR
       uses: terraform-docs/gh-actions@main
       with:
         git-commit-message: "Auto-Generated Terraform Documentation"
