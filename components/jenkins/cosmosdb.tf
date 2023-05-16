@@ -8,7 +8,7 @@ locals {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "pipelinemetrics-database-${var.env}"
+  name     = "pipelinemetrics-database-${local.suffix}"
   location = var.location
   tags     = module.tags.common_tags
 }
