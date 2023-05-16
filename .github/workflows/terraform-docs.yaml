@@ -16,6 +16,6 @@ jobs:
         git-commit-message: "Auto-Generated Terraform Documentation"
         recursive: "true"
         recursive-path: components
-        output-file: README.md
+        output-file: ../../README.md
         output-method: inject
         git-push: "true"
