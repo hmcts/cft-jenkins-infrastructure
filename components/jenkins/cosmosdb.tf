@@ -1,8 +1,3 @@
-# Original code
-# locals {
-#   suffix = var.env == "ptlsbox" ? "-sbox" : ""
-# }
-
 locals {
   suffix = var.env == "ptlsbox" ? "sandbox" : ""
 }

@@ -19,7 +19,7 @@ parameters:
     default: plan
     values:
     - plan
-    # - apply
+    - apply
     # - destroy
 
   - name: environment_components
