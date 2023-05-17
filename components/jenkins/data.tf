@@ -15,5 +15,5 @@ data "azurerm_subnet" "postgres" {
 }
 
 data "azurerm_resource_group" "mi" {
-  name = "managed-identities-cftsbox-intsvc-rg"
+  name = "managed-identities-${var.key_vault_name}-rg"
 }
