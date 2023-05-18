@@ -68,7 +68,7 @@ resource "azurerm_cosmosdb_sql_container" "cve-reports" {
 
 resource "azurerm_cosmosdb_sql_container" "container" {
   provider = azurerm.cosmosdb
-  
+
   for_each              = var.partition_key
   name                  = each.key
   resource_group_name   = azurerm_resource_group.rg.name
