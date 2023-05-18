@@ -70,43 +70,6 @@ resource "azurerm_cosmosdb_sql_container" "cve-reports" {
   }
 }
 
-# resource "azurerm_cosmosdb_sql_container" "performance-metrics" {
-#   provider = azurerm.cosmosdb
-
-#   name                  = "performance-metrics"
-#   resource_group_name   = azurerm_resource_group.rg.name
-#   account_name          = azurerm_cosmosdb_account.cosmosdb.name
-#   database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
-#   partition_key_path    = "/_partitionKey"
-#   partition_key_version = 2
-#   throughput            = var.performance_throughput
-#   indexing_policy {
-#     indexing_mode = "consistent"
-#     included_path {
-#       path = "/*"
-#     }
-#   }
-# }
-
-# resource "azurerm_cosmosdb_sql_container" "pipeline-metrics" {
-#   provider = azurerm.cosmosdb
-
-#   name                  = "pipeline-metrics"
-#   resource_group_name   = azurerm_resource_group.rg.name
-#   account_name          = azurerm_cosmosdb_account.cosmosdb.name
-#   database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
-#   partition_key_path    = "/_partitionKey"
-#   partition_key_version = 2
-#   throughput            = var.pipeline_throughput
-
-#   indexing_policy {
-#     indexing_mode = "consistent"
-#     included_path {
-#       path = "/*"
-#     }
-#   }
-# }
-
 resource "azurerm_cosmosdb_sql_container" "container" {
   provider = azurerm.cosmosdb
 

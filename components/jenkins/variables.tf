@@ -44,14 +44,6 @@ variable "database" {
   default     = "jenkins"
 }
 
-# variable "partition_key" {
-#   type        = map(any)
-#   description = "Partition Keys for corresponding databases."
-#   default = {
-#     performance-metrics = "/_partitionKey"
-#     pipeline-metrics    = "/_partitionKey"
-#   }
-# }
 
 variable "cosmos_subscription_id" {
   description = "Subscription to run against"
@@ -66,11 +58,5 @@ variable "throughput" {
   }
 }
 
-# variable "cve_throughput" {
-# }
-# variable "performance_throughput" {
-# }
-# variable "pipeline_throughput" {
-# }
 variable "mi_rg" {
 }
