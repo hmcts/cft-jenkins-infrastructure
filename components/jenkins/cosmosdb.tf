@@ -1,5 +1,6 @@
 locals {
-  suffix = var.env == "ptlsbox" ? "sandbox" : var.env
+  suffix = var.env == "ptlsbox" ? "sandbox" : "prod"
+  prefix = var.env == "ptlsbox" ? "sandbox-" : ""
 }
 
 resource "azurerm_resource_group" "rg" {
@@ -11,16 +12,16 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_user_assigned_identity" "usermi" {
-  resource_group_name = data.azurerm_resource_group.mi.name
+  resource_group_name = var.mi_rg
   location            = var.location
-  name                = "jenkins-cftsbox-intsvc-mi"
+  name                = "jenkins-${var.key_vault_name}-mi"
   tags                = module.tags.common_tags
 }
 
 resource "azurerm_cosmosdb_account" "cosmosdb" {
   provider = azurerm.cosmosdb
 
-  name                      = "${local.suffix}-pipeline-metrics"
+  name                      = "${local.prefix}pipeline-metrics"
   location                  = var.location
   resource_group_name       = azurerm_resource_group.rg.name
   offer_type                = "Standard"
@@ -63,20 +64,60 @@ resource "azurerm_cosmosdb_sql_container" "cve-reports" {
 
   indexing_policy {
     indexing_mode = "consistent"
+    included_path {
+      path = "/*"
+    }
   }
 }
+
+# resource "azurerm_cosmosdb_sql_container" "performance-metrics" {
+#   provider = azurerm.cosmosdb
+
+#   name                  = "performance-metrics"
+#   resource_group_name   = azurerm_resource_group.rg.name
+#   account_name          = azurerm_cosmosdb_account.cosmosdb.name
+#   database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
+#   partition_key_path    = "/_partitionKey"
+#   partition_key_version = 2
+#   throughput            = var.performance_throughput
+#   indexing_policy {
+#     indexing_mode = "consistent"
+#     included_path {
+#       path = "/*"
+#     }
+#   }
+# }
+
+# resource "azurerm_cosmosdb_sql_container" "pipeline-metrics" {
+#   provider = azurerm.cosmosdb
+
+#   name                  = "pipeline-metrics"
+#   resource_group_name   = azurerm_resource_group.rg.name
+#   account_name          = azurerm_cosmosdb_account.cosmosdb.name
+#   database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
+#   partition_key_path    = "/_partitionKey"
+#   partition_key_version = 2
+#   throughput            = var.pipeline_throughput
+
+#   indexing_policy {
+#     indexing_mode = "consistent"
+#     included_path {
+#       path = "/*"
+#     }
+#   }
+# }
 
 resource "azurerm_cosmosdb_sql_container" "container" {
   provider = azurerm.cosmosdb
 
-  for_each              = var.partition_key
+  for_each              = var.throughput
   name                  = each.key
   resource_group_name   = azurerm_resource_group.rg.name
   account_name          = azurerm_cosmosdb_account.cosmosdb.name
   database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
-  partition_key_path    = each.value
+  partition_key_path    = "/_partitionKey"
   partition_key_version = 2
-  throughput            = 1000
+  throughput            = each.value
 
   indexing_policy {
     indexing_mode = "consistent"

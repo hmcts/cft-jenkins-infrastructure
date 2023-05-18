@@ -13,7 +13,3 @@ data "azurerm_subnet" "postgres" {
   resource_group_name  = "cft-${var.env}-network-rg"
   virtual_network_name = "cft-${var.env}-vnet"
 }
-
-data "azurerm_resource_group" "mi" {
-  name = "managed-identities-${var.key_vault_name}-rg"
-}
