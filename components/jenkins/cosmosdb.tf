@@ -1,13 +1,10 @@
-# Original code
-# locals {
-#   suffix = var.env == "ptlsbox" ? "-sbox" : ""
-# }
-
 locals {
-  suffix = var.env == "ptlsbox" ? "sandbox" : ""
+  suffix = var.env == "ptlsbox" ? "sandbox" : var.env
 }
 
 resource "azurerm_resource_group" "rg" {
+  provider = azurerm.cosmosdb
+
   name     = "pipelinemetrics-database-${local.suffix}"
   location = var.location
   tags     = module.tags.common_tags
@@ -21,6 +18,8 @@ resource "azurerm_user_assigned_identity" "usermi" {
 }
 
 resource "azurerm_cosmosdb_account" "cosmosdb" {
+  provider = azurerm.cosmosdb
+
   name                      = "${local.suffix}-pipeline-metrics"
   location                  = var.location
   resource_group_name       = azurerm_resource_group.rg.name
@@ -44,15 +43,16 @@ resource "azurerm_cosmosdb_account" "cosmosdb" {
 }
 
 resource "azurerm_cosmosdb_sql_database" "sqlapidb" {
+  provider = azurerm.cosmosdb
+
   name                = var.database
   resource_group_name = azurerm_resource_group.rg.name
   account_name        = azurerm_cosmosdb_account.cosmosdb.name
-  # autoscale_settings {
-  #   max_throughput = var.max_throughput
-  # }
 }
 
 resource "azurerm_cosmosdb_sql_container" "cve-reports" {
+  provider = azurerm.cosmosdb
+
   name                  = "cve-reports"
   resource_group_name   = azurerm_resource_group.rg.name
   account_name          = azurerm_cosmosdb_account.cosmosdb.name
@@ -67,6 +67,8 @@ resource "azurerm_cosmosdb_sql_container" "cve-reports" {
 }
 
 resource "azurerm_cosmosdb_sql_container" "container" {
+  provider = azurerm.cosmosdb
+  
   for_each              = var.partition_key
   name                  = each.key
   resource_group_name   = azurerm_resource_group.rg.name
@@ -82,6 +84,8 @@ resource "azurerm_cosmosdb_sql_container" "container" {
 }
 
 resource "azurerm_cosmosdb_sql_role_assignment" "this" {
+  provider = azurerm.cosmosdb
+
   resource_group_name = azurerm_cosmosdb_account.cosmosdb.resource_group_name
   account_name        = azurerm_cosmosdb_account.cosmosdb.name
   # Cosmos DB Built-in Data Contributor

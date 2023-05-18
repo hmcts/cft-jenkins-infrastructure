@@ -52,3 +52,8 @@ variable "partition_key" {
     pipeline-metrics    = "/_partitionKey"
   }
 }
+
+variable "cosmos_subscription_id" {
+  description = "Subscription to run against"
+  type        = string
+}

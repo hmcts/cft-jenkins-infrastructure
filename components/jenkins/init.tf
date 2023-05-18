@@ -20,3 +20,10 @@ provider "azurerm" {
   alias                      = "postgres_network"
   subscription_id            = var.subscription_id
 }
+
+provider "azurerm" {
+  features {}
+  skip_provider_registration = true
+  alias                      = "cosmosdb"
+  subscription_id            = var.cosmos_subscription_id
+}
