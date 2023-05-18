@@ -30,11 +30,11 @@ parameters:
       component: 'jenkins'
       service_connection: 'OPS-APPROVAL-GATE-PTLSBOX-ENVS'
       dependsOn: 'Precheck'
-    # - deployment: 'ptl_jenkins'
-    #   environment: 'ptl'
-    #   component: 'jenkins'
-    #   service_connection: 'OPS-APPROVAL-GATE-PTL-ENVS'
-    #   dependsOn: 'Precheck'
+    - deployment: 'ptl_jenkins'
+      environment: 'ptl'
+      component: 'jenkins'
+      service_connection: 'OPS-APPROVAL-GATE-PTL-ENVS'
+      dependsOn: 'Precheck'
 
 variables:
   - name: timeoutInMinutes
