@@ -1,7 +1,7 @@
 locals {
   suffix = var.env == "ptlsbox" ? "sandbox" : "prod"
   prefix = var.env == "ptlsbox" ? "sandbox-" : ""
-} 
+}
 
 
 resource "azurerm_resource_group" "rg" {

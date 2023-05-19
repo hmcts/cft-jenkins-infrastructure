@@ -52,7 +52,7 @@ variable "cosmos_subscription_id" {
 
 variable "container_names" {
   description = "Database container names for the Cosmosdb account"
-  default = ["performance-metrics","pipeline-metrics"]
+  default     = ["performance-metrics", "pipeline-metrics"]
 }
 
 variable "mi_rg" {
