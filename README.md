@@ -9,13 +9,13 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.4.6 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 3.54.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 3.57.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.54.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.57.0 |
 
 ## Modules
 
@@ -28,15 +28,15 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Type |
 |------|------|
-| [azurerm_key_vault.jenkinskv](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault) | resource |
-| [azurerm_key_vault_secret.db_password](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
-| [azurerm_key_vault_secret.db_username](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
-| [azurerm_managed_disk.disk](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/managed_disk) | resource |
-| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/client_config) | data source |
-| [azurerm_client_config.this](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/client_config) | data source |
-| [azurerm_resource_group.disks_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/resource_group) | data source |
-| [azurerm_resource_group.jenkins_key_vault_rg](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/resource_group) | data source |
-| [azurerm_subnet.postgres](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/subnet) | data source |
+| [azurerm_key_vault.jenkinskv](https://registry.terraform.io/providers/hashicorp/azurerm/3.57.0/docs/resources/key_vault) | resource |
+| [azurerm_key_vault_secret.db_password](https://registry.terraform.io/providers/hashicorp/azurerm/3.57.0/docs/resources/key_vault_secret) | resource |
+| [azurerm_key_vault_secret.db_username](https://registry.terraform.io/providers/hashicorp/azurerm/3.57.0/docs/resources/key_vault_secret) | resource |
+| [azurerm_managed_disk.disk](https://registry.terraform.io/providers/hashicorp/azurerm/3.57.0/docs/resources/managed_disk) | resource |
+| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.57.0/docs/data-sources/client_config) | data source |
+| [azurerm_client_config.this](https://registry.terraform.io/providers/hashicorp/azurerm/3.57.0/docs/data-sources/client_config) | data source |
+| [azurerm_resource_group.disks_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/3.57.0/docs/data-sources/resource_group) | data source |
+| [azurerm_resource_group.jenkins_key_vault_rg](https://registry.terraform.io/providers/hashicorp/azurerm/3.57.0/docs/data-sources/resource_group) | data source |
+| [azurerm_subnet.postgres](https://registry.terraform.io/providers/hashicorp/azurerm/3.57.0/docs/data-sources/subnet) | data source |
 
 ## Inputs
 
