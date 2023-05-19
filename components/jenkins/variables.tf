@@ -39,7 +39,7 @@ variable "key_vault_rg" {
   default     = "core-infra-intsvc-rg"
 }
 
-variable "database" {
+variable "cosmos_database_name" {
   description = "Name of the cosmos database."
   default     = "jenkins"
 }
@@ -50,13 +50,11 @@ variable "cosmos_subscription_id" {
   type        = string
 }
 
-variable "throughput" {
-  description = "Throughput for each container"
-  default = {
-    performance-metrics = 1000
-    pipeline-metrics    = 1500
-  }
+variable "container_names" {
+  description = "Database container names for the Cosmosdb account"
+  default = ["performance-metrics","pipeline-metrics"]
 }
 
 variable "mi_rg" {
+  description = "Resource group that holds the Jenkins Managed Identity"
 }
