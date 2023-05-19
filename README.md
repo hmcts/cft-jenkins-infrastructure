@@ -1,9 +1,7 @@
 # Jenkins Infrastructure for CFT platform
 
-Creates the resources that CFT Jenkins requires
-
-Including:
-- A Postgres database for the pact broker
+## Purpose
+This respository is responsible for the creation of CFT Jenkins infrastructure using Terraform, and automates the Terraform workflow for maintaining existing resources and adding new resources.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
