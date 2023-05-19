@@ -2,8 +2,7 @@ trigger:
   batch: "true"
   branches:
     include:
-    # - main
-    - DTSPO-13620-cosmosdb
+    - main
 
 resources:
   repositories:

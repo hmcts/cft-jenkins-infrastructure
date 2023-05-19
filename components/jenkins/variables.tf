@@ -46,7 +46,7 @@ variable "cosmos_database_name" {
 
 
 variable "cosmos_subscription_id" {
-  description = "Subscription to run against"
+  description = "Subscription to run against for Cosmos DB resources"
   type        = string
 }
 
