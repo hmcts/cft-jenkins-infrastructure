@@ -51,17 +51,17 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Name of the GitHub repository this application is being built from. | `string` | n/a | yes |
+| <a name="input_container_names"></a> [container\_names](#input\_container\_names) | Database container names for the Cosmosdb account | `list` | <pre>[<br>  "performance-metrics",<br>  "pipeline-metrics"<br>]</pre> | no |
+| <a name="input_cosmos_database_name"></a> [cosmos\_database\_name](#input\_cosmos\_database\_name) | Name of the cosmos database. | `string` | `"jenkins"` | no |
 | <a name="input_cosmos_subscription_id"></a> [cosmos\_subscription\_id](#input\_cosmos\_subscription\_id) | Subscription to run against | `string` | n/a | yes |
-| <a name="input_database"></a> [database](#input\_database) | Name of the cosmos database. | `string` | `"jenkins"` | no |
 | <a name="input_env"></a> [env](#input\_env) | Name of the environment to deploy the resource. | `string` | n/a | yes |
 | <a name="input_jenkins_disk_source_resource_id"></a> [jenkins\_disk\_source\_resource\_id](#input\_jenkins\_disk\_source\_resource\_id) | The ID of existing Managed Disk or Snapshot to copy | `string` | n/a | yes |
 | <a name="input_key_vault_name"></a> [key\_vault\_name](#input\_key\_vault\_name) | Key vault to store secrets in | `string` | n/a | yes |
 | <a name="input_key_vault_rg"></a> [key\_vault\_rg](#input\_key\_vault\_rg) | Resource group that holds the Jenkins Key Vault | `string` | `"core-infra-intsvc-rg"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location to deploy the resource | `string` | `"UK South"` | no |
-| <a name="input_mi_rg"></a> [mi\_rg](#input\_mi\_rg) | n/a | `any` | n/a | yes |
+| <a name="input_mi_rg"></a> [mi\_rg](#input\_mi\_rg) | Resource group that holds the Jenkins Managed Identity | `any` | n/a | yes |
 | <a name="input_product"></a> [product](#input\_product) | Name of the product. | `string` | n/a | yes |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription to run against | `string` | n/a | yes |
-| <a name="input_throughput"></a> [throughput](#input\_throughput) | Throughput for each container | `map` | <pre>{<br>  "performance-metrics": 1000,<br>  "pipeline-metrics": 1500<br>}</pre> | no |
 
 ## Outputs
 
