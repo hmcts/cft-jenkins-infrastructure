@@ -12,13 +12,6 @@ resource "azurerm_resource_group" "rg" {
   tags     = module.tags.common_tags
 }
 
-resource "azurerm_user_assigned_identity" "usermi" {
-  resource_group_name = var.mi_rg
-  location            = var.location
-  name                = "jenkins-${var.key_vault_name}-mi"
-  tags                = module.tags.common_tags
-}
-
 resource "azurerm_cosmosdb_account" "cosmosdb" {
   provider = azurerm.cosmosdb
 

@@ -1,7 +1,7 @@
 resource "azurerm_user_assigned_identity" "usermi" {
-  resource_group_name = data.azurerm_resource_group.mi.name
+  resource_group_name = var.mi_rg
   location            = var.location
-  name                = "jenkins-${var.env}-mi"
+  name                = "jenkins-${var.key_vault_name}-mi"
   tags                = module.tags.common_tags
 }
 
