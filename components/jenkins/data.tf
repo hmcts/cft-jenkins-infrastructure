@@ -9,7 +9,8 @@ data "azurerm_resource_group" "jenkins_key_vault_rg" {
 }
 
 data "azurerm_resource_group" "mi" {
-  name = "managed-identities-${var.env}-rg"
+  name      = "managed-identities-${var.env}-rg"
+  object_id = data.azurerm_client_config.this.object_id
 }
 
 data "azurerm_resource_group" "acr_rg" {
