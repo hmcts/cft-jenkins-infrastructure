@@ -4,7 +4,9 @@ data "azurerm_resource_group" "disks_resource_group" {
   name = "disks-${var.env}-rg"
 }
 
-data "azurerm_service_principal" "service_principle" {}
+data "azurerm_service_principal" "service_principle" {
+  name = "dcd_sp_aks_dcd-cftapps-sbox_v2"
+}
 
 data "azurerm_resource_group" "jenkins_key_vault_rg" {
   name = var.key_vault_rg
