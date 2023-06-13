@@ -51,6 +51,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_resource_group.disks_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/resource_group) | data source |
 | [azurerm_resource_group.jenkins_key_vault_rg](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/resource_group) | data source |
 | [azurerm_resource_group.mi](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/resource_group) | data source |
+| [azurerm_service_principal.service_principle](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/service_principal) | data source |
 | [azurerm_subnet.postgres](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/subnet) | data source |
 | [azurerm_subscription.sub](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/subscription) | data source |
 
