@@ -5,6 +5,7 @@ data "azurerm_resource_group" "disks_resource_group" {
 }
 
 data "azurerm_service_principal" "service_principle" {}
+
 data "azurerm_resource_group" "jenkins_key_vault_rg" {
   name = var.key_vault_rg
 }
