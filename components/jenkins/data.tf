@@ -4,13 +4,13 @@ data "azurerm_resource_group" "disks_resource_group" {
   name = "disks-${var.env}-rg"
 }
 
+data "azurerm_service_principal" "service_principle" {}
 data "azurerm_resource_group" "jenkins_key_vault_rg" {
   name = var.key_vault_rg
 }
 
 data "azurerm_resource_group" "mi" {
   name      = "managed-identities-${var.env}-rg"
-  object_id = data.azurerm_client_config.this.object_id
 }
 
 data "azurerm_resource_group" "acr_rg" {
