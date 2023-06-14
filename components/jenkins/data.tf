@@ -13,7 +13,7 @@ data "azuread_groups" "dts_platform_operations" {
 }
 
 data "azuread_groups" "subidcontributer" {
-  display_names = "subidcontributer"
+  display_names = ["subidcontributer"]
 }
 
 data "azurerm_resource_group" "jenkins_key_vault_rg" {
