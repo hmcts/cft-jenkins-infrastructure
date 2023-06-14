@@ -9,11 +9,11 @@ data "azuread_service_principal" "service_principal" {
 }
 
 data "azuread_groups" "dts_platform_operations" {
-  display_name = "DTS Platform Operations"
+  display_names = "DTS Platform Operations"
 }
 
 data "azuread_groups" "subidcontributer" {
-  display_name = "subidcontributer"
+  display_names = "subidcontributer"
 }
 
 data "azurerm_resource_group" "jenkins_key_vault_rg" {
