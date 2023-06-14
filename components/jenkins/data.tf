@@ -12,8 +12,8 @@ data "azuread_group" "dts_platform_operations" {
   display_name = "DTS Platform Operations"
 }
 
-data "azuread_group" "subidcontributer" {
-  display_name = "subidcontributer"
+data "azuread_group" "subiduseraccessadmin" {
+  display_name = "DTS ACR Access Administrators"
 }
 
 data "azurerm_resource_group" "jenkins_key_vault_rg" {
