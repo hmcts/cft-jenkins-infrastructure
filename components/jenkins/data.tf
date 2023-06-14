@@ -8,12 +8,12 @@ data "azuread_service_principal" "service_principal" {
   display_name = "dcd_sp_aks_dcd-cftapps-sbox_v2"
 }
 
-data "azuread_groups" "dts_platform_operations" {
-  display_names = "DTS Platform Operations"
+data "azuread_group" "dts_platform_operations" {
+  display_name = "DTS Platform Operations"
 }
 
-data "azuread_groups" "subidcontributer" {
-  display_names = ["subidcontributer"]
+data "azuread_group" "subidcontributer" {
+  display_name = ["subidcontributer"]
 }
 
 data "azurerm_resource_group" "jenkins_key_vault_rg" {
