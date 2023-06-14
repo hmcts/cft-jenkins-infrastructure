@@ -4,8 +4,20 @@ data "azurerm_resource_group" "disks_resource_group" {
   name = "disks-${var.env}-rg"
 }
 
-data "azuread_service_principal" "service_principle" {
-  name = "dcd_sp_aks_dcd-cftapps-sbox_v2"
+data "azuread_service_principal" "service_principal" {
+  display_name = "dcd_sp_aks_dcd-cftapps-sbox_v2"
+}
+
+data "azuread_groups" "azuread_groups" {
+  display_name = "dcd_sp_aks_dcd-cftapps-sbox_v2"
+}
+
+data "azuread_groups" "dts_platform_operations" {
+  display_name = "DTS Platform Operations"
+}
+
+data "azuread_groups" "subidcontributer" {
+  display_name = "subidcontributer"
 }
 
 data "azurerm_resource_group" "jenkins_key_vault_rg" {
