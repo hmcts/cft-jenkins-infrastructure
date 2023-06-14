@@ -47,7 +47,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_role_assignment.subiduseraccessadmin](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/role_assignment) | resource |
 | [azurerm_user_assigned_identity.usermi](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/user_assigned_identity) | resource |
 | [azuread_group.dts_platform_operations](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/group) | data source |
-| [azuread_group.subidcontributer](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/group) | data source |
+| [azuread_group.subiduseraccessadmin](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/group) | data source |
 | [azuread_service_principal.service_principal](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/service_principal) | data source |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/client_config) | data source |
 | [azurerm_client_config.this](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/client_config) | data source |
