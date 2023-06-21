@@ -13,3 +13,9 @@ data "azurerm_subnet" "postgres" {
   resource_group_name  = "cft-${var.env}-network-rg"
   virtual_network_name = "cft-${var.env}-vnet"
 }
+
+data "azuread_group" "dts_operations" {
+  for_each = { for k, v in var.operations_groups : k => v }
+  display_name = "DTS Operations (env:${each.value})"
+  security_enabled = true
+}

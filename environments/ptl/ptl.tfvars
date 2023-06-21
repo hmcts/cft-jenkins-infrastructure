@@ -3,3 +3,4 @@ jenkins_disk_source_resource_id =  "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfb
 key_vault_name  = "cftptl-intsvc"
 cosmos_subscription_id = "8999dec3-0104-4a27-94ee-6588559729d1"
 mi_rg = "managed-identities-cftptl-intsvc-rg"
+operations_groups = ["demo", "ithc", "ptl", "preview", "prod", "stg", "test"]
