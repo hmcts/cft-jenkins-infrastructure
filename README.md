@@ -15,6 +15,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Version |
 |------|---------|
+| <a name="provider_azuread"></a> [azuread](#provider\_azuread) | n/a |
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.54.0 |
 | <a name="provider_azurerm.cosmosdb"></a> [azurerm.cosmosdb](#provider\_azurerm.cosmosdb) | 3.54.0 |
 
@@ -39,7 +40,9 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_key_vault_secret.db_username](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
 | [azurerm_managed_disk.disk](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/managed_disk) | resource |
 | [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/resource_group) | resource |
+| [azurerm_role_assignment.managed_identity_operator](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/role_assignment) | resource |
 | [azurerm_user_assigned_identity.usermi](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/user_assigned_identity) | resource |
+| [azuread_group.dts_operations](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/group) | data source |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/client_config) | data source |
 | [azurerm_client_config.this](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/client_config) | data source |
 | [azurerm_resource_group.disks_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/data-sources/resource_group) | data source |
@@ -60,6 +63,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_key_vault_rg"></a> [key\_vault\_rg](#input\_key\_vault\_rg) | Resource group that holds the Jenkins Key Vault | `string` | `"core-infra-intsvc-rg"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location to deploy the resource | `string` | `"UK South"` | no |
 | <a name="input_mi_rg"></a> [mi\_rg](#input\_mi\_rg) | Resource group that holds the Jenkins Managed Identity | `any` | n/a | yes |
+| <a name="input_operations_groups"></a> [operations\_groups](#input\_operations\_groups) | n/a | `any` | n/a | yes |
 | <a name="input_product"></a> [product](#input\_product) | Name of the product. | `string` | n/a | yes |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription to run against | `string` | n/a | yes |
 

@@ -58,3 +58,5 @@ variable "container_names" {
 variable "mi_rg" {
   description = "Resource group that holds the Jenkins Managed Identity"
 }
+
+variable "operations_groups" {}
