@@ -60,3 +60,20 @@ variable "mi_rg" {
 }
 
 variable "operations_groups" {}
+
+variable "servicebus_enable_private_endpoint" {
+  description = "Enable private endpoint."
+  default     = true
+}
+variable "queue_name" {
+  default     = "jenkins"
+  description = "Name of the servicebus Queue."
+}
+variable "zone_redundant" {
+  description = "Enable Zone redundancy."
+  default     = false
+}
+variable "enable_workflow" {
+  description = "Enable workflow"
+  default     = true
+}
