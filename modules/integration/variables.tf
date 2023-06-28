@@ -4,7 +4,7 @@ variable "subscription_id" {
 
 variable "location" {
   description = "Enter Azure location."
- 
+
 }
 
 variable "env" {
@@ -29,10 +29,10 @@ variable "project" {
 }
 variable "servicebus_enable_private_endpoint" {
   description = "Enable private endpoint."
-  
+
 }
 variable "queue_name" {
- 
+
   description = "Name of the servicebus Queue."
 }
 variable "key_vault_name" {
