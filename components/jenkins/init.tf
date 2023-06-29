@@ -27,3 +27,8 @@ provider "azurerm" {
   alias                      = "cosmosdb"
   subscription_id            = var.cosmos_subscription_id
 }
+provider "azurerm" {
+  features {}
+  alias           = "private_endpoint"
+  subscription_id = var.subscription_id
+}

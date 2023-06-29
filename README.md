@@ -23,6 +23,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_jenkins-webhook-relay"></a> [jenkins-webhook-relay](#module\_jenkins-webhook-relay) | ../../modules/jenkins-webhook-relay/ | n/a |
 | <a name="module_postgresql"></a> [postgresql](#module\_postgresql) | git::https://github.com/hmcts/terraform-module-postgresql-flexible.git | master |
 | <a name="module_tags"></a> [tags](#module\_tags) | git::https://github.com/hmcts/terraform-module-common-tags.git | master |
 
@@ -38,6 +39,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_key_vault.jenkinskv](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault) | resource |
 | [azurerm_key_vault_secret.db_password](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
 | [azurerm_key_vault_secret.db_username](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
+| [azurerm_key_vault_secret.logicappsecret](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
 | [azurerm_managed_disk.disk](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/managed_disk) | resource |
 | [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/resource_group) | resource |
 | [azurerm_role_assignment.managed_identity_operator](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/role_assignment) | resource |
@@ -57,7 +59,9 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_container_names"></a> [container\_names](#input\_container\_names) | Database container names for the Cosmosdb account | `list` | <pre>[<br>  "performance-metrics",<br>  "pipeline-metrics"<br>]</pre> | no |
 | <a name="input_cosmos_database_name"></a> [cosmos\_database\_name](#input\_cosmos\_database\_name) | Name of the cosmos database. | `string` | `"jenkins"` | no |
 | <a name="input_cosmos_subscription_id"></a> [cosmos\_subscription\_id](#input\_cosmos\_subscription\_id) | Subscription to run against for Cosmos DB resources | `string` | n/a | yes |
+| <a name="input_enable_workflow"></a> [enable\_workflow](#input\_enable\_workflow) | Enable workflow | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | Name of the environment to deploy the resource. | `string` | n/a | yes |
+| <a name="input_expiresAfter"></a> [expiresAfter](#input\_expiresAfter) | Expiration date | `string` | `"3000-01-01"` | no |
 | <a name="input_jenkins_disk_source_resource_id"></a> [jenkins\_disk\_source\_resource\_id](#input\_jenkins\_disk\_source\_resource\_id) | The ID of existing Managed Disk or Snapshot to copy | `string` | n/a | yes |
 | <a name="input_key_vault_name"></a> [key\_vault\_name](#input\_key\_vault\_name) | Key vault to store secrets in | `string` | n/a | yes |
 | <a name="input_key_vault_rg"></a> [key\_vault\_rg](#input\_key\_vault\_rg) | Resource group that holds the Jenkins Key Vault | `string` | `"core-infra-intsvc-rg"` | no |
@@ -65,7 +69,10 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_mi_rg"></a> [mi\_rg](#input\_mi\_rg) | Resource group that holds the Jenkins Managed Identity | `any` | n/a | yes |
 | <a name="input_operations_groups"></a> [operations\_groups](#input\_operations\_groups) | n/a | `any` | n/a | yes |
 | <a name="input_product"></a> [product](#input\_product) | Name of the product. | `string` | n/a | yes |
+| <a name="input_queue_name"></a> [queue\_name](#input\_queue\_name) | Name of the servicebus Queue. | `string` | `"jenkins"` | no |
+| <a name="input_servicebus_enable_private_endpoint"></a> [servicebus\_enable\_private\_endpoint](#input\_servicebus\_enable\_private\_endpoint) | Enable private endpoint. | `bool` | `true` | no |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription to run against | `string` | n/a | yes |
+| <a name="input_zone_redundant"></a> [zone\_redundant](#input\_zone\_redundant) | Enable Zone redundancy. | `bool` | `false` | no |
 
 ## Outputs
 
