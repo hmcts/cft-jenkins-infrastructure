@@ -2,7 +2,7 @@ module "jenkins-webhook-relay" {
   providers = {
     azurerm.private_endpoint = azurerm.private_endpoint
   }
-  source                             = "../../modules/integration/"
+  source                             = "../../modules/jenkins-webhook-relay/"
   subscription_id                    = var.subscription_id
   env                                = var.env
   product                            = var.product
