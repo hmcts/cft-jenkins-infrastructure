@@ -1,7 +1,7 @@
 module "integration" {
-    providers = {
+  providers = {
     azurerm.private_endpoint = azurerm.private_endpoint
-   }
+  }
   source                             = "../../modules/integration/"
   subscription_id                    = var.subscription_id
   env                                = var.env
