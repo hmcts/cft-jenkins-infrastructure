@@ -12,7 +12,7 @@ module "servicebus-namespace" {
   }
   source                  = "git::https://github.com/hmcts/terraform-module-servicebus-namespace?ref=master"
   name                    = "github-jenkins-${var.env}"
-  resource_group_name     = data.azurerm_resource_group.rg.name
+  resource_group_name     = azurerm_resource_group.azure_resource_group.name
   location                = var.location
   env                     = var.env
   common_tags             = module.ctags.common_tags
