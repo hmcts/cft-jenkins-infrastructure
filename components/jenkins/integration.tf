@@ -17,3 +17,9 @@ module "integration" {
   zone_redundant                     = var.zone_redundant
   enable_workflow                    = var.enable_workflow
 }
+
+resource "azurerm_key_vault_secret" "logicappsecret" {
+  name         = "github-jenkins-${var.env}-logicapp"
+  value        = module.integration.logicapp-trigger-endpoint
+  key_vault_id = azurerm_key_vault.jenkinskv.id
+}
