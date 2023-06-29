@@ -16,5 +16,5 @@ data "azurerm_managed_api" "api" {
   location = var.location
 }
 data "local_file" "logic_app" {
-  filename = "./workflow.json"
+  filename = "../../modules/integration/workflow.json"
 }
