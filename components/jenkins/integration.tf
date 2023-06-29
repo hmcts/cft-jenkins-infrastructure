@@ -1,4 +1,4 @@
-module "integration" {
+module "jenkins-webhook-relay" {
   providers = {
     azurerm.private_endpoint = azurerm.private_endpoint
   }
@@ -20,6 +20,6 @@ module "integration" {
 
 resource "azurerm_key_vault_secret" "logicappsecret" {
   name         = "github-jenkins-${var.env}-logicapp"
-  value        = module.integration.logicapp-trigger-endpoint
+  value        = module.jenkins-webhook-relay.logicapp-trigger-endpoint
   key_vault_id = azurerm_key_vault.jenkinskv.id
 }

@@ -16,5 +16,5 @@ data "azurerm_managed_api" "api" {
   location = var.location
 }
 data "local_file" "logic_app" {
-  filename = "../../modules/integration/workflow.json"
+  filename = "../../modules/jenkins-webhook-relay/workflow.json"
 }
