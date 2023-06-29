@@ -9,7 +9,7 @@ module "integration" {
   location                           = var.location
   builtFrom                          = var.builtFrom
   expiresAfter                       = var.expiresAfter
-  project                            = var.project
+  project                            = "cft"
   servicebus_enable_private_endpoint = var.servicebus_enable_private_endpoint
   queue_name                         = var.queue_name
   key_vault_name                     = var.key_vault_name

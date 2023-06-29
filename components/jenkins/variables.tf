@@ -77,3 +77,7 @@ variable "enable_workflow" {
   description = "Enable workflow"
   default     = true
 }
+variable "expiresAfter" {
+  description = "Expiration date"
+  default     = "3000-01-01"
+}
