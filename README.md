@@ -23,7 +23,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_jenkins-webhook-relay"></a> [jenkins-webhook-relay](#module\_jenkins-webhook-relay) | ../../modules/jenkins-webhook-relay/ | n/a |
+| <a name="module_jenkins-webhook-relay"></a> [jenkins-webhook-relay](#module\_jenkins-webhook-relay) | git::https://github.com/hmcts/terraform-module-jenkins-webhook-infrastructure | main |
 | <a name="module_postgresql"></a> [postgresql](#module\_postgresql) | git::https://github.com/hmcts/terraform-module-postgresql-flexible.git | master |
 | <a name="module_tags"></a> [tags](#module\_tags) | git::https://github.com/hmcts/terraform-module-common-tags.git | master |
 
