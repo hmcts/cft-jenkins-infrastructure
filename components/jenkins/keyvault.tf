@@ -12,6 +12,18 @@ resource "azurerm_key_vault" "jenkinskv" {
   tags                            = var.env == "ptlsbox" ? module.tags.common_tags : merge(module.tags.common_tags, local.ptl_kv_tags)
 }
 
+resource "azurerm_key_vault_access_policy" "orphaned_resource_access_policy" {
+  key_vault_id = azurerm_key_vault.jenkinskv.id
+
+  object_id = var.orphaned_resource_application_object_id
+  tenant_id = data.azurerm_client_config.current.tenant_id
+
+  secret_permissions = [
+    "List",
+    "Get",
+  ]
+}
+
 locals {
   ptl_kv_tags = {
     dataClassification = "internal"

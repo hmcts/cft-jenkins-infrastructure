@@ -36,6 +36,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_cosmosdb_sql_database.sqlapidb](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/cosmosdb_sql_database) | resource |
 | [azurerm_cosmosdb_sql_role_assignment.this](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
 | [azurerm_key_vault.jenkinskv](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault) | resource |
+| [azurerm_key_vault_access_policy.orphaned_resource_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_secret.db_password](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
 | [azurerm_key_vault_secret.db_username](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
 | [azurerm_key_vault_secret.logicappsecret](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
@@ -67,6 +68,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_location"></a> [location](#input\_location) | Azure location to deploy the resource | `string` | `"UK South"` | no |
 | <a name="input_mi_rg"></a> [mi\_rg](#input\_mi\_rg) | Resource group that holds the Jenkins Managed Identity | `any` | n/a | yes |
 | <a name="input_operations_groups"></a> [operations\_groups](#input\_operations\_groups) | n/a | `any` | n/a | yes |
+| <a name="input_orphaned_resource_application_object_id"></a> [orphaned\_resource\_application\_object\_id](#input\_orphaned\_resource\_application\_object\_id) | DTS Orphaned Resource Cleanup Application Object ID | `string` | `"8a180e28-12b1-4f56-9d60-b0e4f4d8778e"` | no |
 | <a name="input_product"></a> [product](#input\_product) | Name of the product. | `string` | n/a | yes |
 | <a name="input_queue_name"></a> [queue\_name](#input\_queue\_name) | Name of the servicebus Queue. | `string` | `"jenkins"` | no |
 | <a name="input_servicebus_enable_private_endpoint"></a> [servicebus\_enable\_private\_endpoint](#input\_servicebus\_enable\_private\_endpoint) | Enable private endpoint. | `bool` | `true` | no |
