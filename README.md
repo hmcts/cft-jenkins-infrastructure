@@ -68,7 +68,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_location"></a> [location](#input\_location) | Azure location to deploy the resource | `string` | `"UK South"` | no |
 | <a name="input_mi_rg"></a> [mi\_rg](#input\_mi\_rg) | Resource group that holds the Jenkins Managed Identity | `any` | n/a | yes |
 | <a name="input_operations_groups"></a> [operations\_groups](#input\_operations\_groups) | n/a | `any` | n/a | yes |
-| <a name="input_orphaned_resource_application_object_id"></a> [orphaned\_resource\_application\_object\_id](#input\_orphaned\_resource\_application\_object\_id) | DTS Orphaned Resource Cleanup Application Object ID | `string` | `"8a180e28-12b1-4f56-9d60-b0e4f4d8778e"` | no |
+| <a name="input_orphaned_resource_application_object_id"></a> [orphaned\_resource\_application\_object\_id](#input\_orphaned\_resource\_application\_object\_id) | DTS Orphaned Resource Cleanup Application Object ID | `string` | `"c4fb60b5-f376-4e17-9751-0e35850235de"` | no |
 | <a name="input_product"></a> [product](#input\_product) | Name of the product. | `string` | n/a | yes |
 | <a name="input_queue_name"></a> [queue\_name](#input\_queue\_name) | Name of the servicebus Queue. | `string` | `"jenkins"` | no |
 | <a name="input_servicebus_enable_private_endpoint"></a> [servicebus\_enable\_private\_endpoint](#input\_servicebus\_enable\_private\_endpoint) | Enable private endpoint. | `bool` | `true` | no |
