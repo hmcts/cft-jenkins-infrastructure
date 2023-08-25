@@ -85,5 +85,5 @@ variable "expiresAfter" {
 variable "orphaned_resource_application_object_id" {
   description = "DTS Orphaned Resource Cleanup Application Object ID"
   type        = string
-  default     = "c670b53f-74bc-4fa8-82c6-5577e8600d2a"
+  default     = "50cce126-c44a-48bb-9361-5f55868d3182"
 }
