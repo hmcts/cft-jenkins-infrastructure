@@ -56,7 +56,6 @@ variable "container_names" {
 }
 
 variable "max_throughput" {
-  default     = "1500"
   description = "The Maximum throughput of SQL database (RU/s)."
 }
 
