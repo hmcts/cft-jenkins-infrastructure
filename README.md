@@ -66,7 +66,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_key_vault_name"></a> [key\_vault\_name](#input\_key\_vault\_name) | Key vault to store secrets in | `string` | n/a | yes |
 | <a name="input_key_vault_rg"></a> [key\_vault\_rg](#input\_key\_vault\_rg) | Resource group that holds the Jenkins Key Vault | `string` | `"core-infra-intsvc-rg"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location to deploy the resource | `string` | `"UK South"` | no |
-| <a name="input_max_throughput"></a> [max\_throughput](#input\_max\_throughput) | The Maximum throughput of SQL database (RU/s). | `string` | `"1500"` | no |
+| <a name="input_max_throughput"></a> [max\_throughput](#input\_max\_throughput) | The Maximum throughput of SQL database (RU/s). | `any` | n/a | yes |
 | <a name="input_mi_rg"></a> [mi\_rg](#input\_mi\_rg) | Resource group that holds the Jenkins Managed Identity | `any` | n/a | yes |
 | <a name="input_operations_groups"></a> [operations\_groups](#input\_operations\_groups) | n/a | `any` | n/a | yes |
 | <a name="input_orphaned_resource_application_object_id"></a> [orphaned\_resource\_application\_object\_id](#input\_orphaned\_resource\_application\_object\_id) | DTS Orphaned Resource Cleanup Application Object ID | `string` | `"50cce126-c44a-48bb-9361-5f55868d3182"` | no |
