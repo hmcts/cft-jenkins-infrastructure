@@ -61,7 +61,10 @@ resource "azurerm_cosmosdb_sql_container" "cve-reports" {
   database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
   partition_key_path    = "/build/git_url"
   partition_key_version = 2
-  throughput            = 400
+
+  autoscale_settings {
+    max_throughput = var.max_throughput
+  }
 
   indexing_policy {
     indexing_mode = "consistent"
@@ -81,7 +84,10 @@ resource "azurerm_cosmosdb_sql_container" "container" {
   database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
   partition_key_path    = "/_partitionKey"
   partition_key_version = 2
-  throughput            = var.env == "ptl" && each.value == "pipeline-metrics" ? 1500 : 1000
+
+  autoscale_settings {
+    max_throughput = var.max_throughput
+  }
 
   indexing_policy {
     indexing_mode = "consistent"

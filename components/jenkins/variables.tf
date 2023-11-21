@@ -55,6 +55,10 @@ variable "container_names" {
   default     = ["performance-metrics", "pipeline-metrics"]
 }
 
+variable "max_throughput" {
+  description = "The Maximum throughput of SQL database (RU/s)."
+}
+
 variable "mi_rg" {
   description = "Resource group that holds the Jenkins Managed Identity"
 }

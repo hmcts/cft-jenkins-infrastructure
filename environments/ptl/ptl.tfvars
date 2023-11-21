@@ -4,3 +4,4 @@ key_vault_name                  = "cftptl-intsvc"
 cosmos_subscription_id          = "8999dec3-0104-4a27-94ee-6588559729d1"
 mi_rg                           = "managed-identities-cftptl-intsvc-rg"
 operations_groups               = ["demo", "dev", "ithc", "ptl", "prod", "stg", "test"]
+max_throughput                  = "1000"
