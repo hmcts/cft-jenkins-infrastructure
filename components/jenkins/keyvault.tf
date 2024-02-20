@@ -24,6 +24,18 @@ resource "azurerm_key_vault_access_policy" "orphaned_resource_access_policy" {
   ]
 }
 
+resource "azurerm_key_vault_access_policy" "waf_monitoring_access_policy" {
+  key_vault_id = azurerm_key_vault.jenkinskv.id
+
+  object_id = var.waf_monitoring_application_object_id
+  tenant_id = data.azurerm_client_config.current.tenant_id
+
+  secret_permissions = [
+    "List",
+    "Get",
+  ]
+}
+
 locals {
   ptl_kv_tags = {
     dataClassification = "internal"

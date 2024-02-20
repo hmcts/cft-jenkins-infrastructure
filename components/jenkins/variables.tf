@@ -91,3 +91,9 @@ variable "orphaned_resource_application_object_id" {
   type        = string
   default     = "50cce126-c44a-48bb-9361-5f55868d3182"
 }
+
+variable "waf_monitoring_application_object_id" {
+  description = "WAF Monitoring Application Object ID"
+  type        = string
+  default     = "414c87c4-9f5a-4fcf-b630-91d1c282ace0"
+}

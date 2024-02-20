@@ -37,6 +37,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_cosmosdb_sql_role_assignment.this](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
 | [azurerm_key_vault.jenkinskv](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault) | resource |
 | [azurerm_key_vault_access_policy.orphaned_resource_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_access_policy) | resource |
+| [azurerm_key_vault_access_policy.waf_monitoring_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_secret.db_password](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
 | [azurerm_key_vault_secret.db_username](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
 | [azurerm_key_vault_secret.logicappsecret](https://registry.terraform.io/providers/hashicorp/azurerm/3.54.0/docs/resources/key_vault_secret) | resource |
@@ -74,6 +75,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_queue_name"></a> [queue\_name](#input\_queue\_name) | Name of the servicebus Queue. | `string` | `"jenkins"` | no |
 | <a name="input_servicebus_enable_private_endpoint"></a> [servicebus\_enable\_private\_endpoint](#input\_servicebus\_enable\_private\_endpoint) | Enable private endpoint. | `bool` | `true` | no |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription to run against | `string` | n/a | yes |
+| <a name="input_waf_monitoring_application_object_id"></a> [waf\_monitoring\_application\_object\_id](#input\_waf\_monitoring\_application\_object\_id) | WAF Monitoring Application Object ID | `string` | `"414c87c4-9f5a-4fcf-b630-91d1c282ace0"` | no |
 | <a name="input_zone_redundant"></a> [zone\_redundant](#input\_zone\_redundant) | Enable Zone redundancy. | `bool` | `false` | no |
 
 ## Outputs
