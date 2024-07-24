@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.54.0"
+      version = "3.105.0"
     }
   }
 
@@ -32,3 +32,11 @@ provider "azurerm" {
   alias           = "private_endpoint"
   subscription_id = var.subscription_id
 }
+
+provider "azurerm" {
+  alias                      = "managed_identity_infra_subs"
+  subscription_id            = local.mi_cft[local.mi_environment].subscription_id
+  skip_provider_registration = "true"
+  features {}
+}
+
