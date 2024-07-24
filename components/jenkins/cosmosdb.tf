@@ -42,10 +42,6 @@ resource "azurerm_cosmosdb_account" "cosmosdb" {
     location          = "UK West"
     failover_priority = 1
   }
-  identity {
-    type         = "UserAssigned"
-    identity_ids = [data.azurerm_user_assigned_identity.monitoring_mi.id]
-  }
 }
 
 resource "azurerm_cosmosdb_sql_database" "sqlapidb" {
