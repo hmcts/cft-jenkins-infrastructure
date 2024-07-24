@@ -8,7 +8,7 @@ resources:
   repositories:
   - repository: cnp-azuredevops-libraries
     type: github
-    ref: refs/heads/master
+    ref: refs/heads/tf-nagger-improvments
     name: hmcts/cnp-azuredevops-libraries
     endpoint: 'hmcts'
 
