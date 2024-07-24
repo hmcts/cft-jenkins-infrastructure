@@ -1,6 +1,7 @@
 # Jenkins Infrastructure for CFT platform
 
 ## Purpose
+
 This respository is responsible for the creation of CFT Jenkins infrastructure using Terraform, and automates the Terraform workflow for maintaining existing resources and adding new resources.
 
 <!-- BEGIN_TF_DOCS -->
@@ -8,23 +9,23 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 3.54.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 3.93.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_azuread"></a> [azuread](#provider\_azuread) | n/a |
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.54.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.93.0 |
 | <a name="provider_azurerm.cosmosdb"></a> [azurerm.cosmosdb](#provider\_azurerm.cosmosdb) | 3.54.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_jenkins-webhook-relay"></a> [jenkins-webhook-relay](#module\_jenkins-webhook-relay) | git::https://github.com/hmcts/terraform-module-jenkins-webhook-infrastructure | main |
-| <a name="module_postgresql"></a> [postgresql](#module\_postgresql) | git::https://github.com/hmcts/terraform-module-postgresql-flexible.git | master |
-| <a name="module_tags"></a> [tags](#module\_tags) | git::https://github.com/hmcts/terraform-module-common-tags.git | master |
+| <a name="module_jenkins-webhook-relay"></a> [jenkins-webhook-relay](#module\_jenkins-webhook-relay) | git::<https://github.com/hmcts/terraform-module-jenkins-webhook-infrastructure> | main |
+| <a name="module_postgresql"></a> [postgresql](#module\_postgresql) | git::<https://github.com/hmcts/terraform-module-postgresql-flexible.git> | master |
+| <a name="module_tags"></a> [tags](#module\_tags) | git::<https://github.com/hmcts/terraform-module-common-tags.git> | master |
 
 ## Resources
 
