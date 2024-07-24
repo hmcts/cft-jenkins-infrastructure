@@ -42,6 +42,10 @@ resource "azurerm_cosmosdb_account" "cosmosdb" {
     location          = "UK West"
     failover_priority = 1
   }
+  identity {
+    type         = "UserAssigned"
+    identity_ids = [data.azurerm_user_assigned_identity.monitoring_mi.id]
+  }
 }
 
 resource "azurerm_cosmosdb_sql_database" "sqlapidb" {
@@ -96,6 +100,19 @@ resource "azurerm_cosmosdb_sql_container" "container" {
     }
   }
 }
+
+resource "azurerm_cosmosdb_sql_role_assignment" "monitoring_mi_assignment" {
+  provider = azurerm.managed_identity_infra_subs
+
+  resource_group_name = azurerm_cosmosdb_account.cosmosdb.resource_group_name
+  account_name        = azurerm_cosmosdb_account.cosmosdb.name
+  # Cosmos DB Built-in Data Contributor
+  role_definition_id = "${azurerm_cosmosdb_account.cosmosdb.id}/sqlRoleDefinitions/00000000-0000-0000-0000-000000000002"
+  principal_id       = data.azurerm_user_assigned_identity.monitoring_mi.principal_id
+  scope              = azurerm_cosmosdb_account.cosmosdb.id
+}
+
+
 
 resource "azurerm_cosmosdb_sql_role_assignment" "this" {
   provider = azurerm.cosmosdb
