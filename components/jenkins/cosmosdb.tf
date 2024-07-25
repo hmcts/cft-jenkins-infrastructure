@@ -98,7 +98,7 @@ resource "azurerm_cosmosdb_sql_container" "container" {
 }
 
 resource "azurerm_cosmosdb_sql_role_assignment" "monitoring_mi_assignment" {
-  provider = azurerm.managed_identity_infra_subs
+  provider = azurerm.cosmosdb
 
   resource_group_name = azurerm_cosmosdb_account.cosmosdb.resource_group_name
   account_name        = azurerm_cosmosdb_account.cosmosdb.name
