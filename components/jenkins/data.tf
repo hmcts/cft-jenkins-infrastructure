@@ -23,7 +23,7 @@ data "azuread_group" "dts_operations" {
 data "azurerm_user_assigned_identity" "monitoring_mi" {
   for_each            = local.included_environments
   provider            = azurerm.managed_identity_infra_subs
-  name                = "managed-identities-${each.key}-mi"
+  name                = "monitoring-${each.key}-mi"
   resource_group_name = data.azurerm_resource_group.managed_identities[each.key].name
 }
 
