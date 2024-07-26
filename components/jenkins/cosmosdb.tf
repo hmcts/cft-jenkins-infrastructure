@@ -100,7 +100,7 @@ resource "azurerm_cosmosdb_sql_container" "container" {
 
 resource "azurerm_role_assignment" "rbac_admin" {
   for_each             = { for sp in data.azuread_service_principals.pipeline.service_principals : sp.object_id => sp }
-  role_definition_name = "Role Based Access Control Administrator"
+  role_definition_name = "DocumentDB Account Contributor"
   principal_id         = each.key
   scope                = azurerm_cosmosdb_account.cosmosdb.id
 }
