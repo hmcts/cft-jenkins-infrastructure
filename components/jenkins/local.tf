@@ -1,11 +1,6 @@
 locals {
   mi_environment = var.env == var.env == var.env == "stg" ? "aat" : var.env == "dev" ? "preview" : var.env == "test" ? "perftest" : var.env
   mi_cft = {
-    # DCD-CNP-Sandbox
-    sandbox = {
-      subscription_id = "bf308a5c-0624-4334-8ff8-8dca9fd43783"
-    }
-    # DCD-CNP-DEV
     aat = {
       subscription_id = "1c4f0704-a29e-403d-b719-b90c34ef14c9"
     }
