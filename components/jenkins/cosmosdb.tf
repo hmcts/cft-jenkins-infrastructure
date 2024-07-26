@@ -106,14 +106,14 @@ resource "azurerm_role_assignment" "rbac_admin" {
 }
 
 resource "azurerm_cosmosdb_sql_role_assignment" "monitoring_mi_assignment" {
-  count    = length(data.azurerm_user_assigned_identity.monitoring_mi)
+  for_each = local.included_environments
   provider = azurerm.cosmosdb
 
   resource_group_name = azurerm_cosmosdb_account.cosmosdb.resource_group_name
   account_name        = azurerm_cosmosdb_account.cosmosdb.name
   # Cosmos DB Built-in Data Contributor
   role_definition_id = "${azurerm_cosmosdb_account.cosmosdb.id}/sqlRoleDefinitions/00000000-0000-0000-0000-000000000002"
-  principal_id       = data.azurerm_user_assigned_identity.monitoring_mi[count.index].principal_id
+  principal_id       = data.azurerm_user_assigned_identity.monitoring_mi[each.key].principal_id
   scope              = azurerm_cosmosdb_account.cosmosdb.id
 }
 

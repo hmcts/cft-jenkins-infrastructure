@@ -1,7 +1,7 @@
 locals {
-  excluded_environments   = ["ptl", "sbox", "ptlsbox"]
-  mi_environment          = var.env
-  is_excluded_environment = contains(local.excluded_environments, local.mi_environment)
+  all_environments = ["aat", "demo", "preview", "ithc", "perftest", "prod"]
+  excluded_environments = ["ptl", "sbox", "ptlsbox"]
+  included_environments = { for env in local.all_environments : env => env if !contains(local.excluded_environments, env) }
 
   mi_cft = {
     aat = {
@@ -23,4 +23,5 @@ locals {
       subscription_id = "8999dec3-0104-4a27-94ee-6588559729d1"
     }
   }
+  is_excluded_environment = contains(local.excluded_environments, var.env)
 }
