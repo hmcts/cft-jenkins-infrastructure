@@ -21,6 +21,7 @@ data "azuread_group" "dts_operations" {
 }
 
 data "azurerm_user_assigned_identity" "monitoring_mi" {
+  count = contains(local.excluded_environments, local.mi_environment) ? 0 : 1
   provider            = azurerm.managed_identity_infra_subs
   name                = "monitoring-${local.mi_environment}-mi"
   resource_group_name = data.azurerm_resource_group.managed_identities.name

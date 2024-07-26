@@ -1,5 +1,6 @@
 locals {
-  mi_environment = var.env == var.env == var.env == "stg" ? "aat" : var.env == "dev" ? "preview" : var.env == "test" ? "perftest" : var.env
+  excluded_environments = ["ptl", "sbox", "ptlsbox"]
+  mi_environment = var.env
   mi_cft = {
     aat = {
       subscription_id = "1c4f0704-a29e-403d-b719-b90c34ef14c9"
