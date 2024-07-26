@@ -21,7 +21,7 @@ data "azuread_group" "dts_operations" {
 }
 
 data "azurerm_user_assigned_identity" "monitoring_mi" {
-  count               = contains(local.excluded_environments, local.mi_environment) ? 0 : 1
+  count               = local.is_excluded_environment ? 0 : 1
   provider            = azurerm.managed_identity_infra_subs
   name                = "monitoring-${local.mi_environment}-mi"
   resource_group_name = data.azurerm_resource_group.managed_identities.name
@@ -30,4 +30,16 @@ data "azurerm_user_assigned_identity" "monitoring_mi" {
 data "azurerm_resource_group" "managed_identities" {
   provider = azurerm.managed_identity_infra_subs
   name     = "managed-identities-${local.mi_environment}-rg"
+}
+
+
+data "azuread_service_principals" "pipeline" {
+  display_names = [
+    "DTS Bootstrap (sub:dcd-cftapps-dev)",
+    "DTS Bootstrap (sub:dcd-cftapps-ithc)",
+    "DTS Bootstrap (sub:dcd-cftapps-demo)",
+    "DTS Bootstrap (sub:dcd-cftapps-stg)",
+    "DTS Bootstrap (sub:dcd-cftapps-test)",
+    "DTS Bootstrap (sub:dcd-cftapps-prod)",
+  ]
 }
