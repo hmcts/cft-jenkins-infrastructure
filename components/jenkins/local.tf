@@ -1,5 +1,5 @@
 locals {
-  all_environments = ["aat", "demo", "preview", "ithc", "perftest", "prod"]
+  all_environments      = ["aat", "demo", "preview", "ithc", "perftest", "prod"]
   excluded_environments = ["ptl", "sbox", "ptlsbox"]
   included_environments = { for env in local.all_environments : env => env if !contains(local.excluded_environments, env) }
 
