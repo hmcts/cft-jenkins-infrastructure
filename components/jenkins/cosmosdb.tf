@@ -141,4 +141,4 @@ resource "azurerm_role_assignment" "rbac_admin" {
   role_definition_name = "DocumentDB Account Contributor"
   principal_id         = each.value.object_id
   scope                = azurerm_cosmosdb_account.cosmosdb.id
-  }
+}
