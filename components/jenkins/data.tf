@@ -21,25 +21,12 @@ data "azuread_group" "dts_operations" {
 }
 
 data "azurerm_user_assigned_identity" "monitoring_mi" {
-  for_each            = local.included_environments
   provider            = azurerm.managed_identity_infra_subs
-  name                = "monitoring-${each.key}-mi"
-  resource_group_name = data.azurerm_resource_group.managed_identities[each.key].name
+  name                = "monitoring-${local.mi_environment}-mi"
+  resource_group_name = data.azurerm_resource_group.managed_identities.name
 }
 
 data "azurerm_resource_group" "managed_identities" {
-  for_each = toset(local.all_environments)
   provider = azurerm.managed_identity_infra_subs
-  name     = "managed-identities-${each.value}-rg"
-}
-
-data "azuread_service_principals" "pipeline" {
-  display_names = [
-    "DTS Bootstrap (sub:dcd-cftapps-dev)",
-    "DTS Bootstrap (sub:dcd-cftapps-ithc)",
-    "DTS Bootstrap (sub:dcd-cftapps-demo)",
-    "DTS Bootstrap (sub:dcd-cftapps-stg)",
-    "DTS Bootstrap (sub:dcd-cftapps-test)",
-    "DTS Bootstrap (sub:dcd-cftapps-prod)",
-  ]
+  name     = "managed-identities-${local.mi_environment}-rg"
 }
