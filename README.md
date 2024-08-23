@@ -9,16 +9,16 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 3.105.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 4.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_azuread"></a> [azuread](#provider\_azuread) | n/a |
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.105.0 |
-| <a name="provider_azurerm.cosmosdb"></a> [azurerm.cosmosdb](#provider\_azurerm.cosmosdb) | 3.105.0 |
-| <a name="provider_azurerm.managed_identity_infra_subs"></a> [azurerm.managed\_identity\_infra\_subs](#provider\_azurerm.managed\_identity\_infra\_subs) | 3.105.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.0.0 |
+| <a name="provider_azurerm.cosmosdb"></a> [azurerm.cosmosdb](#provider\_azurerm.cosmosdb) | 4.0.0 |
+| <a name="provider_azurerm.managed_identity_infra_subs"></a> [azurerm.managed\_identity\_infra\_subs](#provider\_azurerm.managed\_identity\_infra\_subs) | 4.0.0 |
 
 ## Modules
 
@@ -32,32 +32,32 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Type |
 |------|------|
-| [azurerm_cosmosdb_account.cosmosdb](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/cosmosdb_account) | resource |
-| [azurerm_cosmosdb_sql_container.container](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/cosmosdb_sql_container) | resource |
-| [azurerm_cosmosdb_sql_container.cve-reports](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/cosmosdb_sql_container) | resource |
-| [azurerm_cosmosdb_sql_database.sqlapidb](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/cosmosdb_sql_database) | resource |
-| [azurerm_cosmosdb_sql_role_assignment.monitoring_mi_assignment](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
-| [azurerm_cosmosdb_sql_role_assignment.this](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
-| [azurerm_key_vault.jenkinskv](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/key_vault) | resource |
-| [azurerm_key_vault_access_policy.orphaned_resource_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/key_vault_access_policy) | resource |
-| [azurerm_key_vault_access_policy.waf_monitoring_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/key_vault_access_policy) | resource |
-| [azurerm_key_vault_secret.db_password](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/key_vault_secret) | resource |
-| [azurerm_key_vault_secret.db_username](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/key_vault_secret) | resource |
-| [azurerm_key_vault_secret.logicappsecret](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/key_vault_secret) | resource |
-| [azurerm_managed_disk.disk](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/managed_disk) | resource |
-| [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/resource_group) | resource |
-| [azurerm_role_assignment.managed_identity_operator](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/role_assignment) | resource |
-| [azurerm_role_assignment.rbac_admin](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/role_assignment) | resource |
-| [azurerm_user_assigned_identity.usermi](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/resources/user_assigned_identity) | resource |
+| [azurerm_cosmosdb_account.cosmosdb](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/cosmosdb_account) | resource |
+| [azurerm_cosmosdb_sql_container.container](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/cosmosdb_sql_container) | resource |
+| [azurerm_cosmosdb_sql_container.cve-reports](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/cosmosdb_sql_container) | resource |
+| [azurerm_cosmosdb_sql_database.sqlapidb](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/cosmosdb_sql_database) | resource |
+| [azurerm_cosmosdb_sql_role_assignment.monitoring_mi_assignment](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
+| [azurerm_cosmosdb_sql_role_assignment.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
+| [azurerm_key_vault.jenkinskv](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/key_vault) | resource |
+| [azurerm_key_vault_access_policy.orphaned_resource_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/key_vault_access_policy) | resource |
+| [azurerm_key_vault_access_policy.waf_monitoring_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/key_vault_access_policy) | resource |
+| [azurerm_key_vault_secret.db_password](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/key_vault_secret) | resource |
+| [azurerm_key_vault_secret.db_username](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/key_vault_secret) | resource |
+| [azurerm_key_vault_secret.logicappsecret](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/key_vault_secret) | resource |
+| [azurerm_managed_disk.disk](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/managed_disk) | resource |
+| [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/resource_group) | resource |
+| [azurerm_role_assignment.managed_identity_operator](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/role_assignment) | resource |
+| [azurerm_role_assignment.rbac_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/role_assignment) | resource |
+| [azurerm_user_assigned_identity.usermi](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/resources/user_assigned_identity) | resource |
 | [azuread_group.dts_operations](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/group) | data source |
 | [azuread_service_principals.pipeline](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/service_principals) | data source |
-| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/data-sources/client_config) | data source |
-| [azurerm_client_config.this](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/data-sources/client_config) | data source |
-| [azurerm_resource_group.disks_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/data-sources/resource_group) | data source |
-| [azurerm_resource_group.jenkins_key_vault_rg](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/data-sources/resource_group) | data source |
-| [azurerm_resource_group.managed_identities](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/data-sources/resource_group) | data source |
-| [azurerm_subnet.postgres](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/data-sources/subnet) | data source |
-| [azurerm_user_assigned_identity.monitoring_mi](https://registry.terraform.io/providers/hashicorp/azurerm/3.105.0/docs/data-sources/user_assigned_identity) | data source |
+| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/data-sources/client_config) | data source |
+| [azurerm_client_config.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/data-sources/client_config) | data source |
+| [azurerm_resource_group.disks_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/data-sources/resource_group) | data source |
+| [azurerm_resource_group.jenkins_key_vault_rg](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/data-sources/resource_group) | data source |
+| [azurerm_resource_group.managed_identities](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/data-sources/resource_group) | data source |
+| [azurerm_subnet.postgres](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/data-sources/subnet) | data source |
+| [azurerm_user_assigned_identity.monitoring_mi](https://registry.terraform.io/providers/hashicorp/azurerm/4.0.0/docs/data-sources/user_assigned_identity) | data source |
 
 ## Inputs
 
