@@ -22,13 +22,13 @@ resource "azurerm_user_assigned_identity" "usermi" {
 resource "azurerm_cosmosdb_account" "cosmosdb" {
   provider = azurerm.cosmosdb
 
-  name                      = "${local.prefix}pipeline-metrics"
-  location                  = var.location
-  resource_group_name       = azurerm_resource_group.rg.name
-  offer_type                = "Standard"
-  kind                      = "GlobalDocumentDB"
-  tags                      = module.tags.common_tags
-  enable_automatic_failover = false
+  name                       = "${local.prefix}pipeline-metrics"
+  location                   = var.location
+  resource_group_name        = azurerm_resource_group.rg.name
+  offer_type                 = "Standard"
+  kind                       = "GlobalDocumentDB"
+  tags                       = module.tags.common_tags
+  automatic_failover_enabled = true
   consistency_policy {
     consistency_level = "Session"
   }
@@ -59,7 +59,7 @@ resource "azurerm_cosmosdb_sql_container" "cve-reports" {
   resource_group_name   = azurerm_resource_group.rg.name
   account_name          = azurerm_cosmosdb_account.cosmosdb.name
   database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
-  partition_key_path    = "/build/git_url"
+  partition_key_paths   = ["/build/git_url"]
   partition_key_version = 2
 
   autoscale_settings {
@@ -82,7 +82,7 @@ resource "azurerm_cosmosdb_sql_container" "container" {
   resource_group_name   = azurerm_resource_group.rg.name
   account_name          = azurerm_cosmosdb_account.cosmosdb.name
   database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
-  partition_key_path    = "/_partitionKey"
+  partition_key_paths   = ["/_partitionKey"]
   partition_key_version = 2
 
   autoscale_settings {
