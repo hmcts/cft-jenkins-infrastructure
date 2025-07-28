@@ -64,7 +64,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Name of the GitHub repository this application is being built from. | `string` | n/a | yes |
-| <a name="input_container_names"></a> [container\_names](#input\_container\_names) | Database container names for the Cosmosdb account | `list` | <pre>[<br>  "performance-metrics",<br>  "pipeline-metrics"<br>]</pre> | no |
+| <a name="input_container_names"></a> [container\_names](#input\_container\_names) | Database container names for the Cosmosdb account | `list` | <pre>[<br/>  "performance-metrics",<br/>  "pipeline-metrics"<br/>]</pre> | no |
 | <a name="input_cosmos_database_name"></a> [cosmos\_database\_name](#input\_cosmos\_database\_name) | Name of the cosmos database. | `string` | `"jenkins"` | no |
 | <a name="input_cosmos_subscription_id"></a> [cosmos\_subscription\_id](#input\_cosmos\_subscription\_id) | Subscription to run against for Cosmos DB resources | `string` | n/a | yes |
 | <a name="input_enable_workflow"></a> [enable\_workflow](#input\_enable\_workflow) | Enable workflow | `bool` | `true` | no |
