@@ -16,6 +16,12 @@ variable "location" {
 variable "jenkins_disk_source_resource_id" {
   description = "The ID of existing Managed Disk or Snapshot to copy"
   type        = string
+  default     = null
+}
+
+variable "jenkins_disk_create_option" {
+  description = "Creation option for jenkins disk"
+  type        = string
 }
 
 variable "builtFrom" {

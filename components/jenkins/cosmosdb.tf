@@ -95,6 +95,9 @@ resource "azurerm_cosmosdb_sql_container" "container" {
       path = "/*"
     }
   }
+  lifecycle {
+    ignore_changes = [default_ttl]
+  }
 }
 
 resource "azurerm_cosmosdb_sql_role_assignment" "monitoring_mi_assignment" {
