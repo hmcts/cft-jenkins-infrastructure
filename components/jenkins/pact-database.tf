@@ -44,7 +44,7 @@ module "postgresql" {
 
   enable_read_only_group_access = false
 
-  common_tags = module.tags.common_tags
+  common_tags = local.common_tags
 }
 
 resource "azurerm_key_vault_secret" "db_username" {

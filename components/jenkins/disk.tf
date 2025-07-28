@@ -17,5 +17,5 @@ resource "azurerm_managed_disk" "disk" {
   tier                       = "P30"
   # Hardcoded string literal taken from Azure, used to avoid terraform replacement of exising resource
   source_resource_id = var.jenkins_disk_source_resource_id
-  tags               = module.tags.common_tags
+  tags               = local.common_tags
 }

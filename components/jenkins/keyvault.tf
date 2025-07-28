@@ -9,7 +9,7 @@ resource "azurerm_key_vault" "jenkinskv" {
   purge_protection_enabled        = true
   enabled_for_template_deployment = true
   enable_rbac_authorization       = false
-  tags                            = var.env == "ptlsbox" ? module.tags.common_tags : merge(module.tags.common_tags, local.ptl_kv_tags)
+  tags                            = var.env == "ptlsbox" ? local.common_tags : merge(local.common_tags, local.ptl_kv_tags)
 }
 
 resource "azurerm_key_vault_access_policy" "orphaned_resource_access_policy" {
