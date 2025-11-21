@@ -52,6 +52,14 @@ resource "azurerm_cosmosdb_sql_database" "sqlapidb" {
   account_name        = azurerm_cosmosdb_account.cosmosdb.name
 }
 
+resource "azurerm_cosmosdb_sql_database" "sds_sqlapidb" {
+  provider = azurerm.cosmosdb
+
+  name                = var.sds_cosmos_database_name
+  resource_group_name = azurerm_resource_group.rg.name
+  account_name        = azurerm_cosmosdb_account.cosmosdb.name
+}
+
 resource "azurerm_cosmosdb_sql_container" "cve-reports" {
   provider = azurerm.cosmosdb
 
@@ -82,6 +90,54 @@ resource "azurerm_cosmosdb_sql_container" "container" {
   resource_group_name   = azurerm_resource_group.rg.name
   account_name          = azurerm_cosmosdb_account.cosmosdb.name
   database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
+  partition_key_paths   = ["/_partitionKey"]
+  partition_key_version = 2
+
+  autoscale_settings {
+    max_throughput = var.max_throughput
+  }
+
+  indexing_policy {
+    indexing_mode = "consistent"
+    included_path {
+      path = "/*"
+    }
+  }
+  lifecycle {
+    ignore_changes = [default_ttl]
+  }
+}
+
+resource "azurerm_cosmosdb_sql_container" "sds_cve_reports" {
+  provider = azurerm.cosmosdb
+
+  name                  = "cve-reports"
+  resource_group_name   = azurerm_resource_group.rg.name
+  account_name          = azurerm_cosmosdb_account.cosmosdb.name
+  database_name         = azurerm_cosmosdb_sql_database.sds_sqlapidb.name
+  partition_key_paths   = ["/build/git_url"]
+  partition_key_version = 2
+
+  autoscale_settings {
+    max_throughput = var.max_throughput
+  }
+
+  indexing_policy {
+    indexing_mode = "consistent"
+    included_path {
+      path = "/*"
+    }
+  }
+}
+
+resource "azurerm_cosmosdb_sql_container" "sds_container" {
+  provider = azurerm.cosmosdb
+
+  for_each              = toset(var.container_names)
+  name                  = each.value
+  resource_group_name   = azurerm_resource_group.rg.name
+  account_name          = azurerm_cosmosdb_account.cosmosdb.name
+  database_name         = azurerm_cosmosdb_sql_database.sds_sqlapidb.name
   partition_key_paths   = ["/_partitionKey"]
   partition_key_version = 2
 

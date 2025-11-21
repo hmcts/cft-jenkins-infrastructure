@@ -50,6 +50,10 @@ variable "cosmos_database_name" {
   default     = "jenkins"
 }
 
+variable "sds_cosmos_database_name" {
+  description = "Name of the cosmos database for SDS Jenkins."
+  default     = "sds-jenkins"
+}
 
 variable "cosmos_subscription_id" {
   description = "Subscription to run against for Cosmos DB resources"
