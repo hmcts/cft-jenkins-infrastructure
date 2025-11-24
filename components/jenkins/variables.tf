@@ -45,24 +45,20 @@ variable "key_vault_rg" {
   default     = "core-infra-intsvc-rg"
 }
 
-variable "cosmos_database_name" {
-  description = "Name of the cosmos database."
-  default     = "jenkins"
-}
-
-variable "sds_cosmos_database_name" {
-  description = "Name of the cosmos database for SDS Jenkins."
-  default     = "sds-jenkins"
-}
-
 variable "cosmos_subscription_id" {
   description = "Subscription to run against for Cosmos DB resources"
   type        = string
 }
 
-variable "container_names" {
-  description = "Database container names for the Cosmosdb account"
-  default     = ["performance-metrics", "pipeline-metrics"]
+variable "cosmos_databases" {
+  description = "Cosmos SQL databases and containers to create"
+  type = map(object({
+    name = string
+    containers = map(object({
+      partition_key_path = string
+      ignore_default_ttl = optional(bool, false)
+    }))
+  }))
 }
 
 variable "max_throughput" {

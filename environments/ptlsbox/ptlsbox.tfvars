@@ -5,3 +5,38 @@ mi_rg                      = "managed-identities-cftsbox-intsvc-rg"
 operations_groups          = ["ptlsbox", "sbox"]
 max_throughput             = "1000"
 jenkins_disk_create_option = "Empty"
+
+cosmos_databases = {
+  jenkins = {
+    name = "jenkins"
+    containers = {
+      "cve-reports" = {
+        partition_key_path = "/build/git_url"
+      }
+      "performance-metrics" = {
+        partition_key_path = "/_partitionKey"
+        ignore_default_ttl = true
+      }
+      "pipeline-metrics" = {
+        partition_key_path = "/_partitionKey"
+        ignore_default_ttl = true
+      }
+    }
+  }
+  sds = {
+    name = "sds-jenkins"
+    containers = {
+      "cve-reports" = {
+        partition_key_path = "/build/git_url"
+      }
+      "performance-metrics" = {
+        partition_key_path = "/_partitionKey"
+        ignore_default_ttl = true
+      }
+      "pipeline-metrics" = {
+        partition_key_path = "/_partitionKey"
+        ignore_default_ttl = true
+      }
+    }
+  }
+}

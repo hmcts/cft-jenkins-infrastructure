@@ -1,8 +1,41 @@
 locals {
   suffix = var.env == "ptlsbox" ? "sandbox" : "prod"
   prefix = var.env == "ptlsbox" ? "sandbox-" : ""
+  cosmos_containers = length(var.cosmos_databases) == 0 ? {} : merge(
+    [
+      for db_key, db in var.cosmos_databases :
+      {
+        for container_name, container in db.containers :
+        "${db_key}-${container_name}" => {
+          name               = container_name
+          database_key       = db_key
+          partition_key_path = container.partition_key_path
+          ignore_default_ttl = try(container.ignore_default_ttl, false)
+        }
+      }
+    ]...
+  )
 }
 
+moved {
+  from = azurerm_cosmosdb_sql_database.sqlapidb
+  to   = azurerm_cosmosdb_sql_database.databases["jenkins"]
+}
+
+moved {
+  from = azurerm_cosmosdb_sql_container.cve-reports
+  to   = azurerm_cosmosdb_sql_container.containers["jenkins-cve-reports"]
+}
+
+moved {
+  from = azurerm_cosmosdb_sql_container.container["performance-metrics"]
+  to   = azurerm_cosmosdb_sql_container.containers["jenkins-performance-metrics"]
+}
+
+moved {
+  from = azurerm_cosmosdb_sql_container.container["pipeline-metrics"]
+  to   = azurerm_cosmosdb_sql_container.containers["jenkins-pipeline-metrics"]
+}
 
 resource "azurerm_resource_group" "rg" {
   provider = azurerm.cosmosdb
@@ -44,30 +77,24 @@ resource "azurerm_cosmosdb_account" "cosmosdb" {
   }
 }
 
-resource "azurerm_cosmosdb_sql_database" "sqlapidb" {
+resource "azurerm_cosmosdb_sql_database" "databases" {
   provider = azurerm.cosmosdb
+  for_each = var.cosmos_databases
 
-  name                = var.cosmos_database_name
+  name                = each.value.name
   resource_group_name = azurerm_resource_group.rg.name
   account_name        = azurerm_cosmosdb_account.cosmosdb.name
 }
 
-resource "azurerm_cosmosdb_sql_database" "sds_sqlapidb" {
+resource "azurerm_cosmosdb_sql_container" "containers" {
   provider = azurerm.cosmosdb
+  for_each = local.cosmos_containers
 
-  name                = var.sds_cosmos_database_name
-  resource_group_name = azurerm_resource_group.rg.name
-  account_name        = azurerm_cosmosdb_account.cosmosdb.name
-}
-
-resource "azurerm_cosmosdb_sql_container" "cve-reports" {
-  provider = azurerm.cosmosdb
-
-  name                  = "cve-reports"
+  name                  = each.value.name
   resource_group_name   = azurerm_resource_group.rg.name
   account_name          = azurerm_cosmosdb_account.cosmosdb.name
-  database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
-  partition_key_paths   = ["/build/git_url"]
+  database_name         = azurerm_cosmosdb_sql_database.databases[each.value.database_key].name
+  partition_key_paths   = [each.value.partition_key_path]
   partition_key_version = 2
 
   autoscale_settings {
@@ -80,77 +107,7 @@ resource "azurerm_cosmosdb_sql_container" "cve-reports" {
       path = "/*"
     }
   }
-}
 
-resource "azurerm_cosmosdb_sql_container" "container" {
-  provider = azurerm.cosmosdb
-
-  for_each              = toset(var.container_names)
-  name                  = each.value
-  resource_group_name   = azurerm_resource_group.rg.name
-  account_name          = azurerm_cosmosdb_account.cosmosdb.name
-  database_name         = azurerm_cosmosdb_sql_database.sqlapidb.name
-  partition_key_paths   = ["/_partitionKey"]
-  partition_key_version = 2
-
-  autoscale_settings {
-    max_throughput = var.max_throughput
-  }
-
-  indexing_policy {
-    indexing_mode = "consistent"
-    included_path {
-      path = "/*"
-    }
-  }
-  lifecycle {
-    ignore_changes = [default_ttl]
-  }
-}
-
-resource "azurerm_cosmosdb_sql_container" "sds_cve_reports" {
-  provider = azurerm.cosmosdb
-
-  name                  = "cve-reports"
-  resource_group_name   = azurerm_resource_group.rg.name
-  account_name          = azurerm_cosmosdb_account.cosmosdb.name
-  database_name         = azurerm_cosmosdb_sql_database.sds_sqlapidb.name
-  partition_key_paths   = ["/build/git_url"]
-  partition_key_version = 2
-
-  autoscale_settings {
-    max_throughput = var.max_throughput
-  }
-
-  indexing_policy {
-    indexing_mode = "consistent"
-    included_path {
-      path = "/*"
-    }
-  }
-}
-
-resource "azurerm_cosmosdb_sql_container" "sds_container" {
-  provider = azurerm.cosmosdb
-
-  for_each              = toset(var.container_names)
-  name                  = each.value
-  resource_group_name   = azurerm_resource_group.rg.name
-  account_name          = azurerm_cosmosdb_account.cosmosdb.name
-  database_name         = azurerm_cosmosdb_sql_database.sds_sqlapidb.name
-  partition_key_paths   = ["/_partitionKey"]
-  partition_key_version = 2
-
-  autoscale_settings {
-    max_throughput = var.max_throughput
-  }
-
-  indexing_policy {
-    indexing_mode = "consistent"
-    included_path {
-      path = "/*"
-    }
-  }
   lifecycle {
     ignore_changes = [default_ttl]
   }
