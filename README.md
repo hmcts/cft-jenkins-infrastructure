@@ -63,7 +63,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Name of the GitHub repository this application is being built from. | `string` | n/a | yes |
-| <a name="input_cosmos_databases"></a> [cosmos\_databases](#input\_cosmos\_databases) | Cosmos SQL databases and containers to create | `map(object({ name = string, containers = map(object({ partition_key_path = string, ignore_default_ttl = optional(bool, false) })) }))` | n/a | yes |
+| <a name="input_cosmos_databases"></a> [cosmos\_databases](#input\_cosmos\_databases) | Cosmos SQL databases and containers to create | <pre>map(object({<br/>    name = string<br/>    containers = map(object({<br/>      partition_key_path = string<br/>      ignore_default_ttl = optional(bool, false)<br/>    }))<br/>  }))</pre> | n/a | yes |
 | <a name="input_cosmos_subscription_id"></a> [cosmos\_subscription\_id](#input\_cosmos\_subscription\_id) | Subscription to run against for Cosmos DB resources | `string` | n/a | yes |
 | <a name="input_enable_workflow"></a> [enable\_workflow](#input\_enable\_workflow) | Enable workflow | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | Name of the environment to deploy the resource. | `string` | n/a | yes |
