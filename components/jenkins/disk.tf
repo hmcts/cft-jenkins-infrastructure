@@ -1,7 +1,7 @@
 locals {
   product      = replace(var.product, "cft-", "")
   disk_rg_name = var.env == "ptlsbox" ? upper(data.azurerm_resource_group.disks_resource_group.name) : data.azurerm_resource_group.disks_resource_group.name
-  disk_type    = "Premium_ZRS"
+  disk_type = var.env == "ptlsbox" ? "Premium_ZRS" : "Premium_LRS"
 }
 
 resource "azurerm_managed_disk" "disk" {
