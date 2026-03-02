@@ -58,6 +58,8 @@ locals {
 }
 
 resource "azurerm_role_assignment" "contributor" {
+  count = var.manage_contributor_role ? 1 : 0
+
   scope                = "/subscriptions/${var.subscription_id}"
   name                 = local.contributor_assignment_name
   role_definition_name = "Contributor"
@@ -65,6 +67,8 @@ resource "azurerm_role_assignment" "contributor" {
 }
 
 resource "azurerm_role_assignment" "aks_cluster_admin" {
+  count = var.manage_aks_cluster_admin_role ? 1 : 0
+
   scope                = "/subscriptions/${var.subscription_id}"
   name                 = local.aks_admin_assignment_name
   role_definition_name = "Azure Kubernetes Service Cluster Admin Role"
