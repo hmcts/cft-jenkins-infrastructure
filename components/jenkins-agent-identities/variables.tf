@@ -3,6 +3,18 @@ variable "env" {
   type        = string
 }
 
+variable "builtFrom" {
+  description = "Compatibility variable for shared pipeline template."
+  type        = string
+  default     = ""
+}
+
+variable "product" {
+  description = "Compatibility variable for shared pipeline template."
+  type        = string
+  default     = ""
+}
+
 variable "location" {
   description = "Azure location for the managed identity."
   type        = string
