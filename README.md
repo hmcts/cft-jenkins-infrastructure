@@ -20,7 +20,9 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_tags"></a> [tags](#module\_tags) | git::https://github.com/hmcts/terraform-module-common-tags.git | master |
 
 ## Resources
 
@@ -36,15 +38,16 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Compatibility variable for shared pipeline template. | `string` | `""` | no |
+| <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
 | <a name="input_create_identity"></a> [create\_identity](#input\_create\_identity) | Whether to create the managed identity (true) or reference an existing one (false). | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | Name of the target CFT environment for this managed identity. | `string` | n/a | yes |
+| <a name="input_expiresAfter"></a> [expiresAfter](#input\_expiresAfter) | Expiration date for common tags. | `string` | `"3000-01-01"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location for the managed identity. | `string` | `"UK South"` | no |
 | <a name="input_managed_identity_name"></a> [managed\_identity\_name](#input\_managed\_identity\_name) | Managed identity name. | `string` | n/a | yes |
 | <a name="input_managed_identity_resource_group_name"></a> [managed\_identity\_resource\_group\_name](#input\_managed\_identity\_resource\_group\_name) | Resource group where the managed identity exists or will be created. | `string` | n/a | yes |
 | <a name="input_private_dns_resource_group_name"></a> [private\_dns\_resource\_group\_name](#input\_private\_dns\_resource\_group\_name) | Resource group in reform-cft-mgmt containing private DNS zones. | `string` | `"core-infra-intsvc-rg"` | no |
 | <a name="input_private_dns_subscription_id"></a> [private\_dns\_subscription\_id](#input\_private\_dns\_subscription\_id) | Subscription ID that hosts the shared private DNS zones (reform-cft-mgmt). | `string` | `"04d27a32-7a07-48b3-95b8-3c8691e1a263"` | no |
-| <a name="input_product"></a> [product](#input\_product) | Compatibility variable for shared pipeline template. | `string` | `""` | no |
+| <a name="input_product"></a> [product](#input\_product) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Target environment subscription ID for managed identity and subscription-level role assignments. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Optional tags to apply when creating the managed identity. | `map(string)` | `{}` | no |
 

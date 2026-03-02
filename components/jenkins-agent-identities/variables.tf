@@ -6,13 +6,17 @@ variable "env" {
 variable "builtFrom" {
   description = "Compatibility variable for shared pipeline template."
   type        = string
-  default     = ""
 }
 
 variable "product" {
   description = "Compatibility variable for shared pipeline template."
   type        = string
-  default     = ""
+}
+
+variable "expiresAfter" {
+  description = "Expiration date for common tags."
+  type        = string
+  default     = "3000-01-01"
 }
 
 variable "location" {
