@@ -15,74 +15,36 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azuread"></a> [azuread](#provider\_azuread) | n/a |
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.37.0 |
-| <a name="provider_azurerm.cosmosdb"></a> [azurerm.cosmosdb](#provider\_azurerm.cosmosdb) | 4.37.0 |
-| <a name="provider_azurerm.managed_identity_infra_subs"></a> [azurerm.managed\_identity\_infra\_subs](#provider\_azurerm.managed\_identity\_infra\_subs) | 4.37.0 |
+| <a name="provider_azurerm.cft_mgmt"></a> [azurerm.cft\_mgmt](#provider\_azurerm.cft\_mgmt) | 4.37.0 |
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_jenkins-webhook-relay"></a> [jenkins-webhook-relay](#module\_jenkins-webhook-relay) | git::https://github.com/hmcts/terraform-module-jenkins-webhook-infrastructure | main |
-| <a name="module_postgresql"></a> [postgresql](#module\_postgresql) | git::https://github.com/hmcts/terraform-module-postgresql-flexible.git | master |
-| <a name="module_tags"></a> [tags](#module\_tags) | git::https://github.com/hmcts/terraform-module-common-tags.git | master |
+No modules.
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [azurerm_cosmosdb_account.cosmosdb](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_account) | resource |
-| [azurerm_cosmosdb_sql_container.containers](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_container) | resource |
-| [azurerm_cosmosdb_sql_database.databases](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_database) | resource |
-| [azurerm_cosmosdb_sql_role_assignment.monitoring_mi_assignment](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
-| [azurerm_cosmosdb_sql_role_assignment.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
-| [azurerm_key_vault.jenkinskv](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault) | resource |
-| [azurerm_key_vault_access_policy.orphaned_resource_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
-| [azurerm_key_vault_access_policy.waf_monitoring_access_policy](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
-| [azurerm_key_vault_secret.db_password](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_secret) | resource |
-| [azurerm_key_vault_secret.db_username](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_secret) | resource |
-| [azurerm_key_vault_secret.logicappsecret](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_secret) | resource |
-| [azurerm_managed_disk.disk](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/managed_disk) | resource |
-| [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/resource_group) | resource |
-| [azurerm_role_assignment.managed_identity_operator](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
-| [azurerm_role_assignment.rbac_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
-| [azurerm_user_assigned_identity.usermi](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/user_assigned_identity) | resource |
-| [azuread_group.dts_operations](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/group) | data source |
-| [azuread_service_principals.pipeline](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/service_principals) | data source |
-| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/client_config) | data source |
-| [azurerm_client_config.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/client_config) | data source |
-| [azurerm_resource_group.disks_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/resource_group) | data source |
-| [azurerm_resource_group.jenkins_key_vault_rg](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/resource_group) | data source |
-| [azurerm_resource_group.managed_identities](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/resource_group) | data source |
-| [azurerm_subnet.postgres](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/subnet) | data source |
-| [azurerm_user_assigned_identity.monitoring_mi](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/user_assigned_identity) | data source |
+| [azurerm_role_assignment.aks_cluster_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
+| [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
+| [azurerm_role_assignment.private_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
+| [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/user_assigned_identity) | resource |
+| [azurerm_user_assigned_identity.existing](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/user_assigned_identity) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Name of the GitHub repository this application is being built from. | `string` | n/a | yes |
-| <a name="input_cosmos_databases"></a> [cosmos\_databases](#input\_cosmos\_databases) | Cosmos SQL databases and containers to create | <pre>map(object({<br/>    name = string<br/>    containers = map(object({<br/>      partition_key_path = string<br/>      ignore_default_ttl = optional(bool, false)<br/>    }))<br/>  }))</pre> | n/a | yes |
-| <a name="input_cosmos_subscription_id"></a> [cosmos\_subscription\_id](#input\_cosmos\_subscription\_id) | Subscription to run against for Cosmos DB resources | `string` | n/a | yes |
-| <a name="input_enable_workflow"></a> [enable\_workflow](#input\_enable\_workflow) | Enable workflow | `bool` | `true` | no |
-| <a name="input_env"></a> [env](#input\_env) | Name of the environment to deploy the resource. | `string` | n/a | yes |
-| <a name="input_expiresAfter"></a> [expiresAfter](#input\_expiresAfter) | Expiration date | `string` | `"3000-01-01"` | no |
-| <a name="input_jenkins_disk_create_option"></a> [jenkins\_disk\_create\_option](#input\_jenkins\_disk\_create\_option) | Creation option for jenkins disk | `string` | n/a | yes |
-| <a name="input_jenkins_disk_source_resource_id"></a> [jenkins\_disk\_source\_resource\_id](#input\_jenkins\_disk\_source\_resource\_id) | The ID of existing Managed Disk or Snapshot to copy | `string` | `null` | no |
-| <a name="input_key_vault_name"></a> [key\_vault\_name](#input\_key\_vault\_name) | Key vault to store secrets in | `string` | n/a | yes |
-| <a name="input_key_vault_rg"></a> [key\_vault\_rg](#input\_key\_vault\_rg) | Resource group that holds the Jenkins Key Vault | `string` | `"core-infra-intsvc-rg"` | no |
-| <a name="input_location"></a> [location](#input\_location) | Azure location to deploy the resource | `string` | `"UK South"` | no |
-| <a name="input_max_throughput"></a> [max\_throughput](#input\_max\_throughput) | The Maximum throughput of SQL database (RU/s). | `any` | n/a | yes |
-| <a name="input_mi_rg"></a> [mi\_rg](#input\_mi\_rg) | Resource group that holds the Jenkins Managed Identity | `any` | n/a | yes |
-| <a name="input_operations_groups"></a> [operations\_groups](#input\_operations\_groups) | n/a | `any` | n/a | yes |
-| <a name="input_orphaned_resource_application_object_id"></a> [orphaned\_resource\_application\_object\_id](#input\_orphaned\_resource\_application\_object\_id) | DTS Orphaned Resource Cleanup Application Object ID | `string` | `"50cce126-c44a-48bb-9361-5f55868d3182"` | no |
-| <a name="input_product"></a> [product](#input\_product) | Name of the product. | `string` | n/a | yes |
-| <a name="input_queue_name"></a> [queue\_name](#input\_queue\_name) | Name of the servicebus Queue. | `string` | `"jenkins"` | no |
-| <a name="input_servicebus_enable_private_endpoint"></a> [servicebus\_enable\_private\_endpoint](#input\_servicebus\_enable\_private\_endpoint) | Enable private endpoint. | `bool` | `true` | no |
-| <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription to run against | `string` | n/a | yes |
-| <a name="input_waf_monitoring_application_object_id"></a> [waf\_monitoring\_application\_object\_id](#input\_waf\_monitoring\_application\_object\_id) | WAF Monitoring Application Object ID | `string` | `"414c87c4-9f5a-4fcf-b630-91d1c282ace0"` | no |
-| <a name="input_zone_redundant"></a> [zone\_redundant](#input\_zone\_redundant) | Enable Zone redundancy. | `bool` | `false` | no |
+| <a name="input_create_identity"></a> [create\_identity](#input\_create\_identity) | Whether to create the managed identity (true) or reference an existing one (false). | `bool` | `true` | no |
+| <a name="input_env"></a> [env](#input\_env) | Name of the target CFT environment for this managed identity. | `string` | n/a | yes |
+| <a name="input_location"></a> [location](#input\_location) | Azure location for the managed identity. | `string` | `"UK South"` | no |
+| <a name="input_managed_identity_name"></a> [managed\_identity\_name](#input\_managed\_identity\_name) | Managed identity name. | `string` | n/a | yes |
+| <a name="input_managed_identity_resource_group_name"></a> [managed\_identity\_resource\_group\_name](#input\_managed\_identity\_resource\_group\_name) | Resource group where the managed identity exists or will be created. | `string` | n/a | yes |
+| <a name="input_private_dns_resource_group_name"></a> [private\_dns\_resource\_group\_name](#input\_private\_dns\_resource\_group\_name) | Resource group in reform-cft-mgmt containing private DNS zones. | `string` | `"core-infra-intsvc-rg"` | no |
+| <a name="input_private_dns_subscription_id"></a> [private\_dns\_subscription\_id](#input\_private\_dns\_subscription\_id) | Subscription ID that hosts the shared private DNS zones (reform-cft-mgmt). | `string` | `"04d27a32-7a07-48b3-95b8-3c8691e1a263"` | no |
+| <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Target environment subscription ID for managed identity and subscription-level role assignments. | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | Optional tags to apply when creating the managed identity. | `map(string)` | `{}` | no |
 
 ## Outputs
 
