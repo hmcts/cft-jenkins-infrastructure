@@ -46,16 +46,26 @@ variable "create_identity" {
   default     = true
 }
 
+variable "manage_contributor_role" {
+  description = "Whether to manage the Contributor subscription role assignment."
+  type        = bool
+  default     = true
+}
+
+variable "manage_aks_cluster_admin_role" {
+  description = "Whether to manage the AKS Cluster Admin subscription role assignment."
+  type        = bool
+  default     = true
+}
+
 variable "private_dns_subscription_id" {
   description = "Subscription ID that hosts the shared private DNS zones (reform-cft-mgmt)."
   type        = string
-  default     = "04d27a32-7a07-48b3-95b8-3c8691e1a263"
 }
 
 variable "private_dns_resource_group_name" {
   description = "Resource group in reform-cft-mgmt containing private DNS zones."
   type        = string
-  default     = "core-infra-intsvc-rg"
 }
 
 variable "tags" {

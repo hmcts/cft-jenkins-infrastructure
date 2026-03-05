@@ -16,7 +16,7 @@ provider "azurerm" {
 
 provider "azurerm" {
   features {}
-  alias                      = "cft_mgmt"
-  subscription_id            = var.private_dns_subscription_id
-  skip_provider_registration = true
+  alias                           = "cft_mgmt"
+  subscription_id                 = var.private_dns_subscription_id
+  resource_provider_registrations = "none"
 }
