@@ -17,6 +17,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 |------|---------|
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.37.0 |
 | <a name="provider_azurerm.cft_mgmt"></a> [azurerm.cft\_mgmt](#provider\_azurerm.cft\_mgmt) | 4.37.0 |
+| <a name="provider_azurerm.cosmosdb"></a> [azurerm.cosmosdb](#provider\_azurerm.cosmosdb) | 4.37.0 |
 
 ## Modules
 
@@ -28,10 +29,12 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Type |
 |------|------|
+| [azurerm_cosmosdb_sql_role_assignment.cosmosdb_data_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
 | [azurerm_role_assignment.aks_cluster_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.private_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/user_assigned_identity) | resource |
+| [azurerm_cosmosdb_account.pipeline_metrics](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/cosmosdb_account) | data source |
 | [azurerm_user_assigned_identity.existing](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/user_assigned_identity) | data source |
 
 ## Inputs
