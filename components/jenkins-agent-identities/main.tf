@@ -8,7 +8,6 @@ module "tags" {
 
 locals {
   common_tags = merge(module.tags.common_tags, var.tags)
-  env         = var.env == "sbox" ? "sandbox" : var.env
 }
 
 resource "azurerm_user_assigned_identity" "this" {
