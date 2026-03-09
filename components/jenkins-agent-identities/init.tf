@@ -20,3 +20,10 @@ provider "azurerm" {
   subscription_id                 = var.private_dns_subscription_id
   resource_provider_registrations = "none"
 }
+
+provider "azurerm" {
+  features {}
+  skip_provider_registration = true
+  alias                      = "cosmosdb"
+  subscription_id            = var.cosmos_subscription_id
+}
