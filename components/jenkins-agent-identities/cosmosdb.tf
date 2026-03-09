@@ -1,6 +1,6 @@
 data "azurerm_cosmosdb_account" "pipeline_metrics" {
-  name                = var.env == "sbox" ? "${var.env}-pipeline-metrics" : "pipeline-metrics"
-  resource_group_name = "pipelinemetrics-database-${var.env}"
+  name                = local.env == "sandbox" ? "${local.env}-pipeline-metrics" : "pipeline-metrics"
+  resource_group_name = "pipelinemetrics-database-${local.env}"
 }
 
 resource "azurerm_cosmosdb_sql_role_assignment" "cosmosdb_data_contributor" {
