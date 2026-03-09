@@ -1,4 +1,5 @@
 data "azurerm_cosmosdb_account" "pipeline_metrics" {
+  provider            = azurerm.cosmosdb
   name                = local.env == "sandbox" ? "${local.env}-pipeline-metrics" : "pipeline-metrics"
   resource_group_name = "pipelinemetrics-database-${local.env}"
 }
