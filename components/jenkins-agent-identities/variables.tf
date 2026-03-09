@@ -30,6 +30,11 @@ variable "subscription_id" {
   type        = string
 }
 
+variable "cosmos_subscription_id" {
+  description = "Subscription containing cosmos db for pipeline metrics"
+  type        = string
+}
+
 variable "managed_identity_name" {
   description = "Managed identity name."
   type        = string
