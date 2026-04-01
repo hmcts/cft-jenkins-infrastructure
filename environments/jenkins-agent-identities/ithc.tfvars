@@ -8,14 +8,6 @@ create_identity                      = true
 cosmos_subscription_id               = "8999dec3-0104-4a27-94ee-6588559729d1"
 
 key_vaults = {
-  "app-vault-nonprod" = {
-    name                = "app-vault-nonprod"
-    resource_group_name = "cnp-core-infra"
-  },
-  "infra-vault-nonprod" = {
-    name                = "infra-vault-nonprod"
-    resource_group_name = "cnp-core-infra"
-  }
   "infra-vault-qa" = {
     name                = "infra-vault-qa"
     resource_group_name = "cnp-core-infra"

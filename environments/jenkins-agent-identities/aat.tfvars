@@ -16,8 +16,3 @@ key_vaults = {
     name                = "infra-vault-nonprod"
     resource_group_name = "cnp-core-infra"
   }
-  "infra-vault-qa" = {
-    name                = "infra-vault-qa"
-    resource_group_name = "cnp-core-infra"
-  }
-}
