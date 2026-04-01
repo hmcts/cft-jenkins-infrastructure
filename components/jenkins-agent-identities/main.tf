@@ -84,10 +84,10 @@ resource "azurerm_role_assignment" "private_dns_zone_contributor" {
   principal_id         = local.principal_id
 }
 
-resource "azurerm_key_vault_access_policy" "this" {
+resource "azurerm_key_vault_access_policy" "infra_vault" {
   for_each = { for k,v in var.key_vaults : k => v if var.key_vaults != {} }
 
-  key_vault_id = data.azurerm_key_vault.this[each.key].id
+  key_vault_id = data.azurerm_key_vault.infra_vault[each.key].id
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = local.principal_id
 
