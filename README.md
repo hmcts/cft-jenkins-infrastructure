@@ -30,11 +30,14 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | Name | Type |
 |------|------|
 | [azurerm_cosmosdb_sql_role_assignment.cosmosdb_data_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
+| [azurerm_key_vault_access_policy.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_role_assignment.aks_cluster_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.private_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/user_assigned_identity) | resource |
+| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/client_config) | data source |
 | [azurerm_cosmosdb_account.pipeline_metrics](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/cosmosdb_account) | data source |
+| [azurerm_key_vault.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/key_vault) | data source |
 | [azurerm_user_assigned_identity.existing](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/user_assigned_identity) | data source |
 
 ## Inputs
@@ -46,6 +49,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_create_identity"></a> [create\_identity](#input\_create\_identity) | Whether to create the managed identity (true) or reference an existing one (false). | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | Name of the target CFT environment for this managed identity. | `string` | n/a | yes |
 | <a name="input_expiresAfter"></a> [expiresAfter](#input\_expiresAfter) | Expiration date for common tags. | `string` | `"3000-01-01"` | no |
+| <a name="input_key_vaults"></a> [key\_vaults](#input\_key\_vaults) | Map of key vaults to which the managed identity should be granted access, keyed by an arbitrary name. Each value should be an object with 'name' and 'resource\_group\_name' properties. | <pre>map(object({<br/>    name                = string<br/>    resource_group_name = string<br/>  }))</pre> | `{}` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location for the managed identity. | `string` | `"UK South"` | no |
 | <a name="input_manage_aks_cluster_admin_role"></a> [manage\_aks\_cluster\_admin\_role](#input\_manage\_aks\_cluster\_admin\_role) | Whether to manage the AKS Cluster Admin subscription role assignment. | `bool` | `true` | no |
 | <a name="input_manage_contributor_role"></a> [manage\_contributor\_role](#input\_manage\_contributor\_role) | Whether to manage the Contributor subscription role assignment. | `bool` | `true` | no |
