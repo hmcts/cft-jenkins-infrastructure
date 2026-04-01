@@ -8,5 +8,3 @@ create_identity                      = false
 manage_contributor_role              = false
 manage_aks_cluster_admin_role        = false
 cosmos_subscription_id               = "bf308a5c-0624-4334-8ff8-8dca9fd43783"
-
-key_vaults = {}
