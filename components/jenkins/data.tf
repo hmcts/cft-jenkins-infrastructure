@@ -32,5 +32,6 @@ data "azurerm_resource_group" "managed_identities" {
 }
 
 data "azurerm_resource_group" "acr_rg" {
+  provider = azurerm.acr
   name     = "rpe-acr-prod-rg"
 }
