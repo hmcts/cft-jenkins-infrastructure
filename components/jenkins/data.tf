@@ -30,3 +30,7 @@ data "azurerm_resource_group" "managed_identities" {
   provider = azurerm.managed_identity_infra_subs
   name     = "managed-identities-${local.mi_environment}-rg"
 }
+
+data "azurerm_resource_group" "acr_rg" {
+  name     = "rpe-acr-prod-rg"
+}
