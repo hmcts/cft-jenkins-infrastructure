@@ -64,7 +64,6 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_product"></a> [product](#input\_product) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Target environment subscription ID for managed identity and subscription-level role assignments. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Optional tags to apply when creating the managed identity. | `map(string)` | `{}` | no |
-| <a name="input_tenant_id"></a> [tenant\_id](#input\_tenant\_id) | Azure AD Tenant ID | `string` | n/a | yes |
 
 ## Outputs
 
