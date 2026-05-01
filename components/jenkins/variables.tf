@@ -103,8 +103,3 @@ variable "waf_monitoring_application_object_id" {
   type        = string
   default     = "414c87c4-9f5a-4fcf-b630-91d1c282ace0"
 }
-
-variable "tenant_id" {
-  description = "Azure AD Tenant ID"
-  type        = string
-}
