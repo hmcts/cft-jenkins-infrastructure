@@ -31,7 +31,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Type |
 |------|------|
-| [azuread_group_member.name](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/resources/group_member) | resource |
+| [azuread_group_member.jenkins](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/resources/group_member) | resource |
 | [azurerm_cosmosdb_sql_role_assignment.cosmosdb_data_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
 | [azurerm_key_vault_access_policy.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_role_assignment.aks_cluster_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
