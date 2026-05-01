@@ -87,3 +87,8 @@ variable "key_vaults" {
   }))
   default = {}
 }
+
+variable "tenant_id" {
+  description = "Azure AD Tenant ID"
+  type        = string
+}
