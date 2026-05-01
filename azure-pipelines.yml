@@ -41,7 +41,7 @@ parameters:
     - deployment: 'sbox_jenkins_agent_identities'
       environment: 'sbox'
       component: 'jenkins-agent-identities'
-      service_connection: 'OPS-APPROVAL-GATE-PTL-ENVS'
+      service_connection: 'OPS-APPROVAL-GATE-PTLSBOX-ENVS'
       dependsOn: 'Precheck'
       tfvars_file: '$(System.DefaultWorkingDirectory)/$(buildRepoSuffix)/environments/jenkins-agent-identities/sbox.tfvars'
       backend_resource_group_name: 'azure-control-ptlsbox-rg'
