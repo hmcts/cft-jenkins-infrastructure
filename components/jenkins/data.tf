@@ -30,3 +30,8 @@ data "azurerm_resource_group" "managed_identities" {
   provider = azurerm.managed_identity_infra_subs
   name     = "managed-identities-${local.mi_environment}-rg"
 }
+
+data "azuread_group" "directory_readers" {
+  display_name     = "DTS Directory Readers"
+  security_enabled = true
+}
