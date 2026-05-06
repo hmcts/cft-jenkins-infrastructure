@@ -64,12 +64,12 @@ variable "manage_aks_cluster_admin_role" {
 }
 
 variable "private_dns_subscription_id" {
-  description = "Subscription ID that hosts the shared private DNS zones (reform-cft-mgmt)."
+  description = "Subscription ID that hosts the shared private DNS zones used by Jenkins deployments."
   type        = string
 }
 
 variable "private_dns_resource_group_name" {
-  description = "Resource group in reform-cft-mgmt containing private DNS zones."
+  description = "Resource group containing the shared private DNS zones used by Jenkins deployments."
   type        = string
 }
 
