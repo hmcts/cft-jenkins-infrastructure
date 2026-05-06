@@ -59,8 +59,8 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_manage_contributor_role"></a> [manage\_contributor\_role](#input\_manage\_contributor\_role) | Whether to manage the Contributor subscription role assignment. | `bool` | `true` | no |
 | <a name="input_managed_identity_name"></a> [managed\_identity\_name](#input\_managed\_identity\_name) | Managed identity name. | `string` | n/a | yes |
 | <a name="input_managed_identity_resource_group_name"></a> [managed\_identity\_resource\_group\_name](#input\_managed\_identity\_resource\_group\_name) | Resource group where the managed identity exists or will be created. | `string` | n/a | yes |
-| <a name="input_private_dns_resource_group_name"></a> [private\_dns\_resource\_group\_name](#input\_private\_dns\_resource\_group\_name) | Resource group in reform-cft-mgmt containing private DNS zones. | `string` | n/a | yes |
-| <a name="input_private_dns_subscription_id"></a> [private\_dns\_subscription\_id](#input\_private\_dns\_subscription\_id) | Subscription ID that hosts the shared private DNS zones (reform-cft-mgmt). | `string` | n/a | yes |
+| <a name="input_private_dns_resource_group_name"></a> [private\_dns\_resource\_group\_name](#input\_private\_dns\_resource\_group\_name) | Resource group containing the shared private DNS zones used by Jenkins deployments. | `string` | n/a | yes |
+| <a name="input_private_dns_subscription_id"></a> [private\_dns\_subscription\_id](#input\_private\_dns\_subscription\_id) | Subscription ID that hosts the shared private DNS zones used by Jenkins deployments. | `string` | n/a | yes |
 | <a name="input_product"></a> [product](#input\_product) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Target environment subscription ID for managed identity and subscription-level role assignments. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Optional tags to apply when creating the managed identity. | `map(string)` | `{}` | no |
