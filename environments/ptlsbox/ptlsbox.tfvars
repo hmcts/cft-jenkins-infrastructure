@@ -1,4 +1,5 @@
 subscription_id            = "1497c3d7-ab6d-4bb7-8a10-b51d03189ee3"
+disk_storage_account_type  = "Premium_ZRS"
 key_vault_name             = "cftsbox-intsvc"
 cosmos_subscription_id     = "bf308a5c-0624-4334-8ff8-8dca9fd43783"
 mi_rg                      = "managed-identities-cftsbox-intsvc-rg"
