@@ -1,4 +1,5 @@
 subscription_id                 = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
+disk_storage_account_type       = "Premium_ZRS"
 jenkins_disk_source_resource_id = "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/resourceGroups/disks-ptl-rg/providers/Microsoft.Compute/snapshots/jenkins-disk-snapshot-26th-Jan"
 jenkins_disk_create_option      = "Copy"
 key_vault_name                  = "cftptl-intsvc"
