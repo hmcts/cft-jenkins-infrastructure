@@ -87,3 +87,8 @@ variable "key_vaults" {
   }))
   default = {}
 }
+
+variable "alerts_subscription_id" {
+  description = "Subscription ID that hosts the Slack alerts resource group."
+  type        = string
+}

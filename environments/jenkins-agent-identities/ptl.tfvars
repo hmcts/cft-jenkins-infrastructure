@@ -8,3 +8,4 @@ create_identity                      = false
 manage_contributor_role              = false
 manage_aks_cluster_admin_role        = false
 cosmos_subscription_id               = "8999dec3-0104-4a27-94ee-6588559729d1"
+alerts_subscription_id               = "8999dec3-0104-4a27-94ee-6588559729d1"
