@@ -12,5 +12,6 @@ data "azuread_group" "directory_readers" {
 }
 
 data "azurerm_resource_group" "slack_alerts" {
-  name = "cft-alerts-slack-ptl"
+  provider = azurerm.alerts-slack
+  name     = "cft-alerts-slack-ptl"
 }
