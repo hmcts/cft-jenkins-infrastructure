@@ -11,7 +11,8 @@ data "azuread_group" "directory_readers" {
   security_enabled = true
 }
 
-data "azurerm_resource_group" "slack_alerts" {
-  provider = azurerm.alerts-slack
-  name     = "cft-alerts-slack-ptl"
+data "azurerm_monitor_action_group" "slack_alerts" {
+  provider            = azurerm.alerts-slack
+  resource_group_name = "cft-alerts-slack-ptl"
+  name                = "cft-alerts-slack-warning-alerts"
 }
