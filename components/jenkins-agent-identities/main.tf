@@ -87,7 +87,7 @@ resource "azurerm_role_assignment" "private_dns_zone_contributor" {
 resource "azurerm_role_assignment" "monitoring_reader" {
   provider             = azurerm.alerts-slack
   scope                = data.azurerm_resource_group.slack_alerts.id
-  name                 = azurerm_user_assigned_identity.this[0].name
+  name                 = local.principal_id
   role_definition_name = "Monitoring Reader"
   principal_id         = local.principal_id
 }
