@@ -84,6 +84,14 @@ resource "azurerm_role_assignment" "private_dns_zone_contributor" {
   principal_id         = local.principal_id
 }
 
+resource "azurerm_role_assignment" "monitoring_reader" {
+  provider             = azurerm.alerts-slack
+  scope                = data.azurerm_monitor_action_group.slack_alerts.id
+  name                 = local.principal_id
+  role_definition_name = "Monitoring Reader"
+  principal_id         = local.principal_id
+}
+
 resource "azurerm_key_vault_access_policy" "infra_vault" {
   for_each = { for k, v in var.key_vaults : k => v if var.key_vaults != {} }
 

@@ -10,3 +10,9 @@ data "azuread_group" "directory_readers" {
   display_name     = "DTS Directory Readers"
   security_enabled = true
 }
+
+data "azurerm_monitor_action_group" "slack_alerts" {
+  provider            = azurerm.alerts-slack
+  resource_group_name = "cft-alerts-slack-ptl"
+  name                = "cft-alerts-slack-warning-alerts"
+}
