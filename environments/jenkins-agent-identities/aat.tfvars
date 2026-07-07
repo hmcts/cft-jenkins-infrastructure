@@ -1,5 +1,6 @@
 env                                  = "aat"
 subscription_id                      = "1c4f0704-a29e-403d-b719-b90c34ef14c9"
+additional_subscription_id           = "96c274ce-846d-4e48-89a7-d528432298a7"
 private_dns_subscription_id          = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
 private_dns_resource_group_name      = "core-infra-intsvc-rg"
 managed_identity_name                = "jenkins-aat-mi"
