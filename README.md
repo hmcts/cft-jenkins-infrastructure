@@ -35,6 +35,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azuread_group_member.jenkins](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/resources/group_member) | resource |
 | [azurerm_cosmosdb_sql_role_assignment.cosmosdb_data_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
 | [azurerm_key_vault_access_policy.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
+| [azurerm_role_assignment.additional_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.aks_cluster_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.monitoring_reader](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
@@ -51,6 +52,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_additional_subscription_id"></a> [additional\_subscription\_id](#input\_additional\_subscription\_id) | Additional subscription ID for managed identity and subscription-level role assignments. | `string` | `""` | no |
 | <a name="input_alerts_subscription_id"></a> [alerts\_subscription\_id](#input\_alerts\_subscription\_id) | Subscription ID that hosts the Slack alerts resource group. | `string` | `"1baf5470-1c3e-40d3-a6f7-74bfbce4b348"` | no |
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
 | <a name="input_cosmos_subscription_id"></a> [cosmos\_subscription\_id](#input\_cosmos\_subscription\_id) | Subscription containing cosmos db for pipeline metrics | `string` | n/a | yes |
