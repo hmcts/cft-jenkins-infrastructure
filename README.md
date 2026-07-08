@@ -52,7 +52,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_additional_subscription_id"></a> [additional\_subscription\_id](#input\_additional\_subscription\_id) | Additional subscription ID for managed identity and subscription-level role assignments. | `string` | `""` | no |
+| <a name="input_additional_subscription_ids"></a> [additional\_subscription\_ids](#input\_additional\_subscription\_ids) | Additional subscription IDs for managed identity and subscription-level role assignments. | `list(string)` | `[]` | no |
 | <a name="input_alerts_subscription_id"></a> [alerts\_subscription\_id](#input\_alerts\_subscription\_id) | Subscription ID that hosts the Slack alerts resource group. | `string` | `"1baf5470-1c3e-40d3-a6f7-74bfbce4b348"` | no |
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
 | <a name="input_cosmos_subscription_id"></a> [cosmos\_subscription\_id](#input\_cosmos\_subscription\_id) | Subscription containing cosmos db for pipeline metrics | `string` | n/a | yes |
