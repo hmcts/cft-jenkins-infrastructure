@@ -1,6 +1,6 @@
 env                                  = "perftest"
 subscription_id                      = "7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c"
-additional_subscription_ids          = ["8a07fdcd-6abd-48b3-ad88-ff737a4b9e3c", "3eec5bde-7feb-4566-bfb6-805df6e10b90"]
+additional_subscription_ids          = ["3eec5bde-7feb-4566-bfb6-805df6e10b90"]
 private_dns_subscription_id          = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
 private_dns_resource_group_name      = "core-infra-intsvc-rg"
 managed_identity_name                = "jenkins-perftest-mi"
