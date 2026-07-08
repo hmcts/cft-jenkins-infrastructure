@@ -14,3 +14,6 @@ key_vaults = {
     resource_group_name = "core-infra-prod"
   }
 }
+
+import_to = azurerm_role_assignment.additional_contributor["8cbc6f36-7c56-4963-9d36-739db5d00b27"]
+import_id = "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/providers/Microsoft.Authorization/roleAssignments/3ae65d6c-3b9b-2a1e-4006-2f62884e9a39"
