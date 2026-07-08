@@ -30,10 +30,10 @@ variable "subscription_id" {
   type        = string
 }
 
-variable "additional_subscription_id" {
-  description = "Additional subscription ID for managed identity and subscription-level role assignments."
-  type        = string
-  default     = ""
+variable "additional_subscription_ids" {
+  description = "Additional subscription IDs for managed identity and subscription-level role assignments."
+  type        = list(string)
+  default     = []
 }
 
 variable "cosmos_subscription_id" {
