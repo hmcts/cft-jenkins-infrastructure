@@ -67,7 +67,7 @@ resource "azurerm_role_assignment" "contributor" {
 }
 
 resource "azurerm_role_assignment" "additional_contributor" {
-  for_each = var.manage_contributor_role ? toset(var.additional_subscription_ids) : toset([])
+  for_each = toset(var.additional_subscription_ids)
 
   scope                = "/subscriptions/${each.value}"
   name                 = format(
