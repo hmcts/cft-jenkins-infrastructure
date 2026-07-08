@@ -14,6 +14,3 @@ key_vaults = {
     resource_group_name = "cnp-core-infra"
   }
 }
-
-import_to = azurerm_role_assignment.additional_contributor["d025fece-ce99-4df2-b7a9-b649d3ff2060"]
-import_id = "/subscriptions/d025fece-ce99-4df2-b7a9-b649d3ff2060/providers/Microsoft.Authorization/roleAssignments/a2e59b2b-2ba5-02fe-6c77-eaf410d99fe9"

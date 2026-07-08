@@ -99,15 +99,3 @@ variable "alerts_subscription_id" {
   type        = string
   default     = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
 }
-
-variable "import_to" {
-  description = "The resource to import into Terraform state."
-  type        = string
-  default     = ""
-}
-
-variable "import_id" {
-  description = "The ID of the resource to import into Terraform state."
-  type        = string
-  default     = ""
-}
