@@ -59,8 +59,6 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_create_identity"></a> [create\_identity](#input\_create\_identity) | Whether to create the managed identity (true) or reference an existing one (false). | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | Name of the target CFT environment for this managed identity. | `string` | n/a | yes |
 | <a name="input_expiresAfter"></a> [expiresAfter](#input\_expiresAfter) | Expiration date for common tags. | `string` | `"3000-01-01"` | no |
-| <a name="input_import_id"></a> [import\_id](#input\_import\_id) | The ID of the resource to import into Terraform state. | `string` | `""` | no |
-| <a name="input_import_to"></a> [import\_to](#input\_import\_to) | The resource to import into Terraform state. | `string` | `""` | no |
 | <a name="input_key_vaults"></a> [key\_vaults](#input\_key\_vaults) | Map of key vaults to which the managed identity should be granted access, keyed by an arbitrary name. Each value should be an object with 'name' and 'resource\_group\_name' properties. | <pre>map(object({<br/>    name                = string<br/>    resource_group_name = string<br/>  }))</pre> | `{}` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location for the managed identity. | `string` | `"UK South"` | no |
 | <a name="input_manage_aks_cluster_admin_role"></a> [manage\_aks\_cluster\_admin\_role](#input\_manage\_aks\_cluster\_admin\_role) | Whether to manage the AKS Cluster Admin subscription role assignment. | `bool` | `true` | no |
