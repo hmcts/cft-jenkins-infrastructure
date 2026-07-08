@@ -1,5 +1,6 @@
 env                                  = "ithc"
 subscription_id                      = "7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c"
+additional_subscription_id           = "1c4f0704-a29e-403d-b719-b90c34ef14c9"
 private_dns_subscription_id          = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
 private_dns_resource_group_name      = "core-infra-intsvc-rg"
 managed_identity_name                = "jenkins-ithc-mi"
