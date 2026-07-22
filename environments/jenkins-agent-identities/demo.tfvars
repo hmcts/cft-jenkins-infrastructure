@@ -1,6 +1,6 @@
 env                                  = "demo"
 subscription_id                      = "1c4f0704-a29e-403d-b719-b90c34ef14c9"
-additional_subscription_ids          = ["d025fece-ce99-4df2-b7a9-b649d3ff2060", "c68a4bed-4c3d-4956-af51-4ae164c1957c", "867a878b-cb68-4de5-9741-361ac9e178b6"]
+additional_subscription_ids          = ["d025fece-ce99-4df2-b7a9-b649d3ff2060", "c68a4bed-4c3d-4956-af51-4ae164c1957c", "867a878b-cb68-4de5-9741-361ac9e178b6", "74dacd4f-a248-45bb-a2f0-af700dc4cf68"]
 private_dns_subscription_id          = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
 private_dns_resource_group_name      = "core-infra-intsvc-rg"
 managed_identity_name                = "jenkins-demo-mi"
