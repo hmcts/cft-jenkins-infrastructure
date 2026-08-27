@@ -69,8 +69,8 @@ resource "azurerm_role_assignment" "contributor" {
 resource "azurerm_role_assignment" "additional_contributor" {
   for_each = toset(var.additional_subscription_ids)
 
-  scope                = "/subscriptions/${each.value}"
-  name                 = format(
+  scope = "/subscriptions/${each.value}"
+  name = format(
     "%s-%s-%s-%s-%s",
     substr(md5("Contributor:/subscriptions/${each.value}:${local.principal_id}"), 0, 8),
     substr(md5("Contributor:/subscriptions/${each.value}:${local.principal_id}"), 8, 4),
@@ -153,4 +153,32 @@ resource "azurerm_key_vault_access_policy" "infra_vault" {
     "GetIssuers",
     "Import"
   ]
+}
+
+resource "azurerm_role_assignment" "rbac_administrator" {
+  count = var.manage_reader_role ? 1 : 0
+
+  scope = "/subscriptions/${var.subscription_id}"
+  name = uuidv5(
+    "url",
+    "Role Based Access Control Administrator:/subscriptions/${var.subscription_id}:${local.principal_id}"
+  )
+  role_definition_name = "Role Based Access Control Administrator"
+  principal_id         = local.principal_id
+  condition_version    = "2.0"
+  condition            = <<-EOT
+    (
+      !(ActionMatches{'Microsoft.Authorization/roleAssignments/write'})
+      OR
+      @Request[Microsoft.Authorization/roleAssignments:RoleDefinitionId]
+        ForAnyOfAnyValues:GuidEquals {acdd72a7-3385-48ef-bd42-f606fba81ae7}
+    )
+    AND
+    (
+      !(ActionMatches{'Microsoft.Authorization/roleAssignments/delete'})
+      OR
+      @Resource[Microsoft.Authorization/roleAssignments:RoleDefinitionId]
+        ForAnyOfAnyValues:GuidEquals {acdd72a7-3385-48ef-bd42-f606fba81ae7}
+    )
+  EOT
 }
