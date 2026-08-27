@@ -69,6 +69,12 @@ variable "manage_aks_cluster_admin_role" {
   default     = true
 }
 
+variable "manage_reader_role" {
+  description = "Whether to manage the Reader subscription role assignment."
+  type        = bool
+  default     = true
+}
+
 variable "private_dns_subscription_id" {
   description = "Subscription ID that hosts the shared private DNS zones used by Jenkins deployments."
   type        = string

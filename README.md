@@ -40,6 +40,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.monitoring_reader](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.private_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
+| [azurerm_role_assignment.rbac_administrator](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/user_assigned_identity) | resource |
 | [azuread_group.directory_readers](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/data-sources/group) | data source |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/client_config) | data source |
@@ -63,6 +64,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_location"></a> [location](#input\_location) | Azure location for the managed identity. | `string` | `"UK South"` | no |
 | <a name="input_manage_aks_cluster_admin_role"></a> [manage\_aks\_cluster\_admin\_role](#input\_manage\_aks\_cluster\_admin\_role) | Whether to manage the AKS Cluster Admin subscription role assignment. | `bool` | `true` | no |
 | <a name="input_manage_contributor_role"></a> [manage\_contributor\_role](#input\_manage\_contributor\_role) | Whether to manage the Contributor subscription role assignment. | `bool` | `true` | no |
+| <a name="input_manage_reader_role"></a> [manage\_reader\_role](#input\_manage\_reader\_role) | Whether to manage the Reader subscription role assignment. | `bool` | `true` | no |
 | <a name="input_managed_identity_name"></a> [managed\_identity\_name](#input\_managed\_identity\_name) | Managed identity name. | `string` | n/a | yes |
 | <a name="input_managed_identity_resource_group_name"></a> [managed\_identity\_resource\_group\_name](#input\_managed\_identity\_resource\_group\_name) | Resource group where the managed identity exists or will be created. | `string` | n/a | yes |
 | <a name="input_private_dns_resource_group_name"></a> [private\_dns\_resource\_group\_name](#input\_private\_dns\_resource\_group\_name) | Resource group containing the shared private DNS zones used by Jenkins deployments. | `string` | n/a | yes |
