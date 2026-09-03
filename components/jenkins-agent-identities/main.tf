@@ -182,32 +182,3 @@ resource "azurerm_role_assignment" "rbac_administrator" {
     )
   EOT
 }
-
-// For AI Gateway onboarding requirement, supports Cognitive Services User and Cognitive Services OpenAI User roles
-resource "azurerm_role_assignment" "cognitive_services_roles" {
-  count = var.manage_cognitive_services_roles ? 1 : 0
-
-  scope = "/subscriptions/${var.subscription_id}"
-  name = uuidv5(
-    "url",
-    "Cognitive Services Roles:/subscriptions/${var.subscription_id}:${local.principal_id}"
-  )
-  role_definition_name = "Role Based Access Control Administrator"
-  principal_id          = local.principal_id
-  condition_version     = "2.0"
-  condition             = <<-EOT
-    (
-      !(ActionMatches{'Microsoft.Authorization/roleAssignments/write'})
-      OR
-      @Request[Microsoft.Authorization/roleAssignments:RoleDefinitionId]
-        ForAnyOfAnyValues:GuidEquals {a97b65f3-24c7-4388-baec-6cadf0d69793, 5e0bd9bd-7b93-4f28-af87-19fc36ad61bd}
-    )
-    AND
-    (
-      !(ActionMatches{'Microsoft.Authorization/roleAssignments/delete'})
-      OR
-      @Resource[Microsoft.Authorization/roleAssignments:RoleDefinitionId]
-        ForAnyOfAnyValues:GuidEquals {a97b65f3-24c7-4388-baec-6cadf0d69793, 5e0bd9bd-7b93-4f28-af87-19fc36ad61bd}
-    )
-  EOT
-}
