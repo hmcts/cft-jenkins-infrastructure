@@ -37,7 +37,6 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_key_vault_access_policy.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_role_assignment.additional_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.aks_cluster_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
-| [azurerm_role_assignment.cognitive_services_roles](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.monitoring_reader](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.private_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
@@ -64,7 +63,6 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_key_vaults"></a> [key\_vaults](#input\_key\_vaults) | Map of key vaults to which the managed identity should be granted access, keyed by an arbitrary name. Each value should be an object with 'name' and 'resource\_group\_name' properties. | <pre>map(object({<br/>    name                = string<br/>    resource_group_name = string<br/>  }))</pre> | `{}` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location for the managed identity. | `string` | `"UK South"` | no |
 | <a name="input_manage_aks_cluster_admin_role"></a> [manage\_aks\_cluster\_admin\_role](#input\_manage\_aks\_cluster\_admin\_role) | Whether to manage the AKS Cluster Admin subscription role assignment. | `bool` | `true` | no |
-| <a name="input_manage_cognitive_services_roles"></a> [manage\_cognitive\_services\_roles](#input\_manage\_cognitive\_services\_roles) | Whether to manage the delegated Cognitive Services User / Cognitive Services OpenAI User role assignments. | `bool` | `true` | no |
 | <a name="input_manage_contributor_role"></a> [manage\_contributor\_role](#input\_manage\_contributor\_role) | Whether to manage the Contributor subscription role assignment. | `bool` | `true` | no |
 | <a name="input_manage_reader_role"></a> [manage\_reader\_role](#input\_manage\_reader\_role) | Whether to manage the Reader subscription role assignment. | `bool` | `true` | no |
 | <a name="input_managed_identity_name"></a> [managed\_identity\_name](#input\_managed\_identity\_name) | Managed identity name. | `string` | n/a | yes |
