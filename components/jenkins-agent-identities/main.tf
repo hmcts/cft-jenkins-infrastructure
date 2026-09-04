@@ -171,14 +171,14 @@ resource "azurerm_role_assignment" "rbac_administrator" {
       !(ActionMatches{'Microsoft.Authorization/roleAssignments/write'})
       OR
       @Request[Microsoft.Authorization/roleAssignments:RoleDefinitionId]
-        ForAnyOfAnyValues:GuidEquals {acdd72a7-3385-48ef-bd42-f606fba81ae7, a97b65f3-24c7-4388-baec-6cadf0d69793, 5e0bd9bd-7b93-4f28-af87-19fc36ad61bd}
+        ForAnyOfAnyValues:GuidEquals {acdd72a7-3385-48ef-bd42-f606fba81ae7, aa97b65f3-24c7-4388-baec-2e87135dc908, 5e0bd9bd-7b93-4f28-af87-19fc36ad61bd}
     )
     AND
     (
       !(ActionMatches{'Microsoft.Authorization/roleAssignments/delete'})
       OR
       @Resource[Microsoft.Authorization/roleAssignments:RoleDefinitionId]
-        ForAnyOfAnyValues:GuidEquals {acdd72a7-3385-48ef-bd42-f606fba81ae7, a97b65f3-24c7-4388-baec-6cadf0d69793, 5e0bd9bd-7b93-4f28-af87-19fc36ad61bd}
+        ForAnyOfAnyValues:GuidEquals {acdd72a7-3385-48ef-bd42-f606fba81ae7, a97b65f3-24c7-4388-baec-2e87135dc908, 5e0bd9bd-7b93-4f28-af87-19fc36ad61bd}
     )
   EOT
 }
