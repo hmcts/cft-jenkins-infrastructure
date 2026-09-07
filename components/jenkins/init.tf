@@ -19,6 +19,13 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
+  alias                           = "cache_storage"
+  subscription_id                 = var.env == "ptlsbox" ? "bf308a5c-0624-4334-8ff8-8dca9fd43783" : var.subscription_id
+  resource_provider_registrations = "none"
+  features {}
+}
+
+provider "azurerm" {
   features {}
   skip_provider_registration = true
   alias                      = "postgres_network"
@@ -43,5 +50,3 @@ provider "azurerm" {
   skip_provider_registration = "true"
   features {}
 }
-
-
