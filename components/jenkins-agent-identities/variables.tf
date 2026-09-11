@@ -105,3 +105,9 @@ variable "alerts_subscription_id" {
   type        = string
   default     = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
 }
+
+variable "cft_ptl_subscription_id" {
+  description = "Subscription ID for the CFT PTL environment."
+  type        = string
+  default     = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
+}

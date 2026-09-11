@@ -19,6 +19,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="provider_azuread"></a> [azuread](#provider\_azuread) | 3.8.0 |
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.37.0 |
 | <a name="provider_azurerm.alerts-slack"></a> [azurerm.alerts-slack](#provider\_azurerm.alerts-slack) | 4.37.0 |
+| <a name="provider_azurerm.cft-ptl"></a> [azurerm.cft-ptl](#provider\_azurerm.cft-ptl) | 4.37.0 |
 | <a name="provider_azurerm.cft_mgmt"></a> [azurerm.cft\_mgmt](#provider\_azurerm.cft\_mgmt) | 4.37.0 |
 | <a name="provider_azurerm.cosmosdb"></a> [azurerm.cosmosdb](#provider\_azurerm.cosmosdb) | 4.37.0 |
 
@@ -34,6 +35,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 |------|------|
 | [azuread_group_member.jenkins](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/resources/group_member) | resource |
 | [azurerm_cosmosdb_sql_role_assignment.cosmosdb_data_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
+| [azurerm_key_vault_access_policy.cftptl_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_role_assignment.additional_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.aks_cluster_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
@@ -45,6 +47,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azuread_group.directory_readers](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/data-sources/group) | data source |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/client_config) | data source |
 | [azurerm_cosmosdb_account.pipeline_metrics](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/cosmosdb_account) | data source |
+| [azurerm_key_vault.cftptl_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/key_vault) | data source |
 | [azurerm_key_vault.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/key_vault) | data source |
 | [azurerm_monitor_action_group.slack_alerts](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/monitor_action_group) | data source |
 | [azurerm_user_assigned_identity.existing](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/user_assigned_identity) | data source |
@@ -56,6 +59,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_additional_subscription_ids"></a> [additional\_subscription\_ids](#input\_additional\_subscription\_ids) | Additional subscription IDs for managed identity and subscription-level role assignments. | `list(string)` | `[]` | no |
 | <a name="input_alerts_subscription_id"></a> [alerts\_subscription\_id](#input\_alerts\_subscription\_id) | Subscription ID that hosts the Slack alerts resource group. | `string` | `"1baf5470-1c3e-40d3-a6f7-74bfbce4b348"` | no |
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
+| <a name="input_cft_ptl_subscription_id"></a> [cft\_ptl\_subscription\_id](#input\_cft\_ptl\_subscription\_id) | Subscription ID for the CFT PTL environment. | `string` | `"1baf5470-1c3e-40d3-a6f7-74bfbce4b348"` | no |
 | <a name="input_cosmos_subscription_id"></a> [cosmos\_subscription\_id](#input\_cosmos\_subscription\_id) | Subscription containing cosmos db for pipeline metrics | `string` | n/a | yes |
 | <a name="input_create_identity"></a> [create\_identity](#input\_create\_identity) | Whether to create the managed identity (true) or reference an existing one (false). | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | Name of the target CFT environment for this managed identity. | `string` | n/a | yes |
