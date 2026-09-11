@@ -18,6 +18,7 @@ data "azurerm_monitor_action_group" "slack_alerts" {
 }
 
 data "azurerm_key_vault" "cftptl_vault" {
+  count               = var.env == "prod" ? 1 : 0
   provider            = azurerm.cft-ptl
   name                = "cftptl-intsvc"
   resource_group_name = "core-infra-intsvc-rg"
