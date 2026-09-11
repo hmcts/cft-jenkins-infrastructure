@@ -13,8 +13,4 @@ key_vaults = {
     name                = "infra-vault-prod"
     resource_group_name = "core-infra-prod"
   }
-  "cftptl-intsvc" = {
-    name                = "cft-ptl-intsvc"
-    resource_group_name = "core-infra-intsvc-rg"
-  }
 }
