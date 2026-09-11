@@ -16,3 +16,9 @@ data "azurerm_monitor_action_group" "slack_alerts" {
   resource_group_name = "cft-alerts-slack-ptl"
   name                = "cft-alerts-slack-warning-alerts"
 }
+
+data "azurerm_key_vault" "ptl_vault" {
+  provider            = azurerm.cft-ptl
+  name                = "cftptl-intsvc"
+  resource_group_name = "core-infra-intsvc-rg"
+}

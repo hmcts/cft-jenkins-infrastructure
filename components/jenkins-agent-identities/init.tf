@@ -38,3 +38,10 @@ provider "azurerm" {
   alias                      = "alerts-slack"
   subscription_id            = var.alerts_subscription_id
 }
+
+provider "azurerm" {
+  features {}
+  skip_provider_registration = true
+  alias                      = "cft-ptl"
+  subscription_id            = var.cft_ptl_subscription_id
+}
