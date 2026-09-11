@@ -48,7 +48,7 @@ resource "azurerm_key_vault_access_policy" "infra_vault" {
 resource "azurerm_key_vault_access_policy" "cftptl_vault" {
   count = var.env == "prod" ? 1 : 0
 
-  key_vault_id = data.azurerm_key_vault.cftptl_vault.id
+  key_vault_id = data.azurerm_key_vault.cftptl_vault[0].id
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = local.principal_id
 
