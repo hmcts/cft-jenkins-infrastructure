@@ -50,6 +50,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_key_vault.cftptl_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/key_vault) | data source |
 | [azurerm_key_vault.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/key_vault) | data source |
 | [azurerm_monitor_action_group.slack_alerts](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/monitor_action_group) | data source |
+| [azurerm_role_definition.rbac_admin_role](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/role_definition) | data source |
 | [azurerm_user_assigned_identity.existing](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/user_assigned_identity) | data source |
 
 ## Inputs
@@ -74,6 +75,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_private_dns_resource_group_name"></a> [private\_dns\_resource\_group\_name](#input\_private\_dns\_resource\_group\_name) | Resource group containing the shared private DNS zones used by Jenkins deployments. | `string` | n/a | yes |
 | <a name="input_private_dns_subscription_id"></a> [private\_dns\_subscription\_id](#input\_private\_dns\_subscription\_id) | Subscription ID that hosts the shared private DNS zones used by Jenkins deployments. | `string` | n/a | yes |
 | <a name="input_product"></a> [product](#input\_product) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
+| <a name="input_rbac_admin_roles"></a> [rbac\_admin\_roles](#input\_rbac\_admin\_roles) | Names of built-in Azure roles that the identity should be allowed to assign, delegated via a Role Based Access Control Administrator condition. Role definition GUIDs are looked up dynamically. | `list(string)` | <pre>[<br/>  "Storage Account Contributor",<br/>  "Storage Blob Data Contributor"<br/>]</pre> | no |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Target environment subscription ID for managed identity and subscription-level role assignments. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Optional tags to apply when creating the managed identity. | `map(string)` | `{}` | no |
 
