@@ -23,3 +23,10 @@ data "azurerm_key_vault" "cftptl_vault" {
   name                = "cftptl-intsvc"
   resource_group_name = "core-infra-intsvc-rg"
 }
+
+data "azurerm_role_definition" "rbac_admin_role" {
+  for_each = toset(var.rbac_admin_roles)
+
+  name  = each.value
+  scope = "/subscriptions/${var.subscription_id}"
+}

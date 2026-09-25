@@ -40,7 +40,8 @@ module "postgresql" {
   collation = "en_US.utf8"
 
   # The ID of the principal to be granted admin access to the database server, should be the principal running this normally
-  admin_user_object_id = data.azurerm_client_config.this.object_id
+  admin_user_object_id          = data.azurerm_client_config.this.object_id
+  preserve_legacy_jenkins_admin = false
 
   enable_read_only_group_access = false
 
