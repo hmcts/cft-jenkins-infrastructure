@@ -78,7 +78,7 @@ variable "manage_reader_role" {
 variable "rbac_admin_roles" {
   description = "Names of built-in Azure roles that the identity should be allowed to assign, delegated via a Role Based Access Control Administrator condition. Role definition GUIDs are looked up dynamically."
   type        = list(string)
-  default     = ["Storage Account Contributor", "Storage Blob Data Contributor"]
+  default     = ["Storage Account Contributor", "Storage Blob Data Contributor", "Cognitive Services OpenAI User", "Cognitive Services User", "Reader"]
 }
 
 variable "private_dns_subscription_id" {
