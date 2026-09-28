@@ -8,7 +8,7 @@ resource "azurerm_role_assignment" "contributor" {
 }
 
 resource "azurerm_role_assignment" "additional_contributor" {
-  for_each = toset(var.additional_contributor_subscription_ids)
+  for_each = toset(var.additional_subscription_ids)
 
   scope = "/subscriptions/${each.value}"
   name = format(
@@ -20,22 +20,6 @@ resource "azurerm_role_assignment" "additional_contributor" {
     substr(md5("Contributor:/subscriptions/${each.value}:${local.principal_id}"), 20, 12)
   )
   role_definition_name = "Contributor"
-  principal_id         = local.principal_id
-}
-
-resource "azurerm_role_assignment" "additional_reader" {
-  for_each = toset(var.additional_reader_subscription_ids)
-
-  scope = "/subscriptions/${each.value}"
-  name = format(
-    "%s-%s-%s-%s-%s",
-    substr(md5("Reader:/subscriptions/${each.value}:${local.principal_id}"), 0, 8),
-    substr(md5("Reader:/subscriptions/${each.value}:${local.principal_id}"), 8, 4),
-    substr(md5("Reader:/subscriptions/${each.value}:${local.principal_id}"), 12, 4),
-    substr(md5("Reader:/subscriptions/${each.value}:${local.principal_id}"), 16, 4),
-    substr(md5("Reader:/subscriptions/${each.value}:${local.principal_id}"), 20, 12)
-  )
-  role_definition_name = "Reader"
   principal_id         = local.principal_id
 }
 

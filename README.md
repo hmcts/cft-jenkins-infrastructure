@@ -38,7 +38,6 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_key_vault_access_policy.cftptl_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_role_assignment.additional_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
-| [azurerm_role_assignment.additional_reader](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.aks_cluster_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.monitoring_reader](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
@@ -58,8 +57,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_additional_contributor_subscription_ids"></a> [additional\_contributor\_subscription\_ids](#input\_additional\_contributor\_subscription\_ids) | Additional subscription IDs for managed identity and subscription-level contributor role assignments. | `list(string)` | `[]` | no |
-| <a name="input_additional_reader_subscription_ids"></a> [additional\_reader\_subscription\_ids](#input\_additional\_reader\_subscription\_ids) | Additional subscription IDs for managed identity and subscription-level reader role assignments. | `list(string)` | `[]` | no |
+| <a name="input_additional_subscription_ids"></a> [additional\_subscription\_ids](#input\_additional\_subscription\_ids) | Additional subscription IDs for managed identity and subscription-level role assignments. | `list(string)` | `[]` | no |
 | <a name="input_alerts_subscription_id"></a> [alerts\_subscription\_id](#input\_alerts\_subscription\_id) | Subscription ID that hosts the Slack alerts resource group. | `string` | `"1baf5470-1c3e-40d3-a6f7-74bfbce4b348"` | no |
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
 | <a name="input_cft_ptl_subscription_id"></a> [cft\_ptl\_subscription\_id](#input\_cft\_ptl\_subscription\_id) | Subscription ID for the CFT PTL environment. | `string` | `"1baf5470-1c3e-40d3-a6f7-74bfbce4b348"` | no |

@@ -7,7 +7,7 @@ managed_identity_resource_group_name = "managed-identities-sandbox-rg"
 create_identity                      = true
 cosmos_subscription_id               = "bf308a5c-0624-4334-8ff8-8dca9fd43783"
 rbac_admin_roles                     = ["Storage Account Contributor", "Storage Blob Data Reader", "Storage Blob Data Contributor", "Cognitive Services OpenAI User", "Cognitive Services User", "Reader"]
-additional_reader_subscription_ids   = ["ed302caf-ec27-4c64-a05e-85731c3ce90e"]
+
 
 key_vaults = {
   "infra-vault-sandbox" = {
