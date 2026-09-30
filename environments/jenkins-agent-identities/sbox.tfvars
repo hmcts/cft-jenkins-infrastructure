@@ -1,6 +1,6 @@
 env                                  = "sbox"
 subscription_id                      = "bf308a5c-0624-4334-8ff8-8dca9fd43783"
-private_dns_subscription_id          = "1497c3d7-ab6d-4bb7-8a10-b51d03189ee3"
+private_dns_subscription_ids          = ["1497c3d7-ab6d-4bb7-8a10-b51d03189ee3", "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"]
 private_dns_resource_group_name      = "core-infra-intsvc-rg"
 managed_identity_name                = "jenkins-sbox-mi"
 managed_identity_resource_group_name = "managed-identities-sandbox-rg"

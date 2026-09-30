@@ -81,9 +81,9 @@ variable "rbac_admin_roles" {
   default     = ["Storage Account Contributor", "Storage Blob Data Contributor", "Cognitive Services OpenAI User", "Cognitive Services User", "Reader"]
 }
 
-variable "private_dns_subscription_id" {
-  description = "Subscription ID that hosts the shared private DNS zones used by Jenkins deployments."
-  type        = string
+variable "private_dns_subscription_ids" {
+  description = "Subscription IDs that host the shared private DNS zones used by Jenkins deployments."
+  type        = list(string)
 }
 
 variable "private_dns_resource_group_name" {
