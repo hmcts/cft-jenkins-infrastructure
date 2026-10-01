@@ -44,7 +44,7 @@ resource "azurerm_role_assignment" "private_dns_zone_contributor" {
 resource "azurerm_role_assignment" "privatelink_dns_zone_contributor" {
   provider = azurerm.cft_mgmt
 
-  count = var.env == "sandbox" ? 1 : 0
+  count = var.env == "sbox" ? 1 : 0
 
   scope                = "/subscriptions/${var.privatelink_dns_subscription_id}/resourceGroups/${var.private_dns_resource_group_name}"
   name                 = local.privatelink_dns_assignment_name
