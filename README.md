@@ -42,6 +42,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.monitoring_reader](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.private_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
+| [azurerm_role_assignment.privatelink_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.rbac_administrator](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/user_assigned_identity) | resource |
 | [azuread_group.directory_readers](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/data-sources/group) | data source |
@@ -74,6 +75,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_managed_identity_resource_group_name"></a> [managed\_identity\_resource\_group\_name](#input\_managed\_identity\_resource\_group\_name) | Resource group where the managed identity exists or will be created. | `string` | n/a | yes |
 | <a name="input_private_dns_resource_group_name"></a> [private\_dns\_resource\_group\_name](#input\_private\_dns\_resource\_group\_name) | Resource group containing the shared private DNS zones used by Jenkins deployments. | `string` | n/a | yes |
 | <a name="input_private_dns_subscription_id"></a> [private\_dns\_subscription\_id](#input\_private\_dns\_subscription\_id) | Subscription ID that hosts the shared private DNS zones used by Jenkins deployments. | `string` | n/a | yes |
+| <a name="input_privatelink_dns_subscription_id"></a> [privatelink\_dns\_subscription\_id](#input\_privatelink\_dns\_subscription\_id) | Subscription ID that hosts the shared private DNS zones used by Jenkins deployments for privatelink. | `string` | `"1baf5470-1c3e-40d3-a6f7-74bfbce4b348"` | no |
 | <a name="input_product"></a> [product](#input\_product) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
 | <a name="input_rbac_admin_roles"></a> [rbac\_admin\_roles](#input\_rbac\_admin\_roles) | Names of built-in Azure roles that the identity should be allowed to assign, delegated via a Role Based Access Control Administrator condition. Role definition GUIDs are looked up dynamically. | `list(string)` | <pre>[<br/>  "Storage Account Contributor",<br/>  "Storage Blob Data Contributor",<br/>  "Cognitive Services OpenAI User",<br/>  "Cognitive Services User",<br/>  "Reader"<br/>]</pre> | no |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Target environment subscription ID for managed identity and subscription-level role assignments. | `string` | n/a | yes |

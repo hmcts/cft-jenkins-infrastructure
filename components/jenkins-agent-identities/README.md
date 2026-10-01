@@ -31,4 +31,13 @@ rbac_admin_roles = ["Storage Account Contributor", "Storage Blob Data Contributo
 Note: the role definition name must be exact for this to work. If you don't enter a valid role, the pipeline will run until timing out as the role cannot be found rather than failing because the role doesn't exist.
 
 ## Warning
+
 Because of the nature of the Azure API at the time of writing (September 2026), adding more roles to this list will delete the RBAC Administrator role from the identity before re-adding it with the new assignable roles.
+
+## Private DNS Zone IDs
+
+Most subscriptions should use the same private DNS zone subscription but sandbox needs to access two.
+
+This is because private endpoint dns zones only live in PTL so sandbox needs access to its own zones and PTL.
+
+See [roles.tf](./roles.tf#L44)

@@ -91,6 +91,12 @@ variable "private_dns_resource_group_name" {
   type        = string
 }
 
+variable "privatelink_dns_subscription_id" {
+  description = "Subscription ID that hosts the shared private DNS zones used by Jenkins deployments for privatelink."
+  type        = string
+  default     = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
+}
+
 variable "tags" {
   description = "Optional tags to apply when creating the managed identity."
   type        = map(string)
