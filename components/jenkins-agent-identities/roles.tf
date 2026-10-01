@@ -35,21 +35,22 @@ resource "azurerm_role_assignment" "aks_cluster_admin" {
 resource "azurerm_role_assignment" "private_dns_zone_contributor" {
   provider = azurerm.cft_mgmt
 
-  for_each = toset(var.private_dns_subscription_ids)
-
-  scope = "/subscriptions/${each.value}/resourceGroups/${var.private_dns_resource_group_name}/providers/Microsoft.Network/privateDnsZones/${each.value}"
-  name = format(
-    "%s-%s-%s-%s-%s",
-    substr(md5("Private DNS Zone Contributor:/subscriptions/${each.value}/resourceGroups/${var.private_dns_resource_group_name}/providers/Microsoft.Network/privateDnsZones/${each.value}:${local.principal_id}"), 0, 8),
-    substr(md5("Private DNS Zone Contributor:/subscriptions/${each.value}/resourceGroups/${var.private_dns_resource_group_name}/providers/Microsoft.Network/privateDnsZones/${each.value}:${local.principal_id}"), 8, 4),
-    substr(md5("Private DNS Zone Contributor:/subscriptions/${each.value}/resourceGroups/${var.private_dns_resource_group_name}/providers/Microsoft.Network/privateDnsZones/${each.value}:${local.principal_id}"), 12, 4),
-    substr(md5("Private DNS Zone Contributor:/subscriptions/${each.value}/resourceGroups/${var.private_dns_resource_group_name}/providers/Microsoft.Network/privateDnsZones/${each.value}:${local.principal_id}"), 16, 4),
-    substr(md5("Private DNS Zone Contributor:/subscriptions/${each.value}/resourceGroups/${var.private_dns_resource_group_name}/providers/Microsoft.Network/privateDnsZones/${each.value}:${local.principal_id}"), 20, 12)
-  )
+  scope                = "/subscriptions/${var.private_dns_subscription_id}/resourceGroups/${var.private_dns_resource_group_name}"
+  name                 = local.private_dns_assignment_name
   role_definition_name = "Private DNS Zone Contributor"
   principal_id         = local.principal_id
 }
 
+resource "azurerm_role_assignment" "private_dns_zone_contributor_sandbox_privatelink" {
+  provider = azurerm.cft_mgmt
+
+  count = var.env == "sandbox" ? 1 : 0
+
+  scope                = "/subscriptions/${var.privatelink_dns_subscription_id}/resourceGroups/${var.private_dns_resource_group_name}"
+  name                 = local.privatelink_dns_assignment_name
+  role_definition_name = "Private DNS Zone Contributor"
+  principal_id         = local.principal_id
+}
 resource "azurerm_role_assignment" "monitoring_reader" {
   provider             = azurerm.alerts-slack
   scope                = data.azurerm_monitor_action_group.slack_alerts.id
