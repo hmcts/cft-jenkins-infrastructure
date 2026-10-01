@@ -42,7 +42,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.monitoring_reader](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.private_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
-| [azurerm_role_assignment.private_dns_zone_contributor_sandbox_privatelink](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
+| [azurerm_role_assignment.privatelink_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.rbac_administrator](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/user_assigned_identity) | resource |
 | [azuread_group.directory_readers](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/data-sources/group) | data source |
