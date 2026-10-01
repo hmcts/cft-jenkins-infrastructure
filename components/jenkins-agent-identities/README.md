@@ -39,3 +39,5 @@ Because of the nature of the Azure API at the time of writing (September 2026), 
 Most subscriptions should use the same private DNS zone subscription but sandbox needs to access two.
 
 This is because private endpoint dns zones only live in PTL so sandbox needs access to its own zones and PTL.
+
+See [roles.tf](./roles.tf#L44)

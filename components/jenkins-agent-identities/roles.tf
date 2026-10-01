@@ -41,7 +41,7 @@ resource "azurerm_role_assignment" "private_dns_zone_contributor" {
   principal_id         = local.principal_id
 }
 
-resource "azurerm_role_assignment" "private_dns_zone_contributor_sandbox_privatelink" {
+resource "azurerm_role_assignment" "privatelink_dns_zone_contributor" {
   provider = azurerm.cft_mgmt
 
   count = var.env == "sandbox" ? 1 : 0
