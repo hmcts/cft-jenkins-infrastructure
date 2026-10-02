@@ -41,6 +41,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_role_assignment.aks_cluster_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.monitoring_reader](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
+| [azurerm_role_assignment.network_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.private_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.rbac_administrator](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/user_assigned_identity) | resource |
@@ -65,6 +66,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_create_identity"></a> [create\_identity](#input\_create\_identity) | Whether to create the managed identity (true) or reference an existing one (false). | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | Name of the target CFT environment for this managed identity. | `string` | n/a | yes |
 | <a name="input_expiresAfter"></a> [expiresAfter](#input\_expiresAfter) | Expiration date for common tags. | `string` | `"3000-01-01"` | no |
+| <a name="input_hub_subscription_id"></a> [hub\_subscription\_id](#input\_hub\_subscription\_id) | Subscription ID that hosts the hub network resources. | `string` | `"fb084706-583f-4c9a-bdab-949aac66ba5c"` | no |
 | <a name="input_key_vaults"></a> [key\_vaults](#input\_key\_vaults) | Map of key vaults to which the managed identity should be granted access, keyed by an arbitrary name. Each value should be an object with 'name' and 'resource\_group\_name' properties. | <pre>map(object({<br/>    name                = string<br/>    resource_group_name = string<br/>  }))</pre> | `{}` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location for the managed identity. | `string` | `"UK South"` | no |
 | <a name="input_manage_aks_cluster_admin_role"></a> [manage\_aks\_cluster\_admin\_role](#input\_manage\_aks\_cluster\_admin\_role) | Whether to manage the AKS Cluster Admin subscription role assignment. | `bool` | `true` | no |
