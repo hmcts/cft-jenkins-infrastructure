@@ -23,6 +23,14 @@ resource "azurerm_role_assignment" "additional_contributor" {
   principal_id         = local.principal_id
 }
 
+resource "azurerm_role_assignment" "network_contributor" {
+
+  scope                = "/subscriptions/${var.hub_subscription_id}"
+  name                 = local.network_contributor_assignment_name
+  role_definition_name = "Network Contributor"
+  principal_id         = local.principal_id
+}
+
 resource "azurerm_role_assignment" "aks_cluster_admin" {
   count = var.manage_aks_cluster_admin_role ? 1 : 0
 
