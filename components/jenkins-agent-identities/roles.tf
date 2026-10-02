@@ -41,16 +41,6 @@ resource "azurerm_role_assignment" "private_dns_zone_contributor" {
   principal_id         = local.principal_id
 }
 
-resource "azurerm_role_assignment" "privatelink_dns_zone_contributor" {
-  provider = azurerm.cft_mgmt
-
-  count = var.env == "sbox" ? 1 : 0
-
-  scope                = "/subscriptions/${var.privatelink_dns_subscription_id}/resourceGroups/${var.private_dns_resource_group_name}"
-  name                 = local.privatelink_dns_assignment_name
-  role_definition_name = "Private DNS Zone Contributor"
-  principal_id         = local.principal_id
-}
 resource "azurerm_role_assignment" "monitoring_reader" {
   provider             = azurerm.alerts-slack
   scope                = data.azurerm_monitor_action_group.slack_alerts.id
