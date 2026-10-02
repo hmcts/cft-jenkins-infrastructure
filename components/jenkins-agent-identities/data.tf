@@ -11,6 +11,13 @@ data "azuread_group" "directory_readers" {
   security_enabled = true
 }
 
+data "azurerm_subscription" "current" {}
+
+data "azuread_group" "aks_administrators" {
+  display_name     = "DTS AKS Administrators (sub:${lower(data.azurerm_subscription.current.display_name)})"
+  security_enabled = true
+}
+
 data "azurerm_monitor_action_group" "slack_alerts" {
   provider            = azurerm.alerts-slack
   resource_group_name = "cft-alerts-slack-ptl"

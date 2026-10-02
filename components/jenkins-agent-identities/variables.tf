@@ -69,6 +69,12 @@ variable "manage_aks_cluster_admin_role" {
   default     = true
 }
 
+variable "manage_aks_administrators_group" {
+  description = "Whether to manage membership of the per-environment DTS AKS Administrators group."
+  type        = bool
+  default     = true
+}
+
 variable "manage_reader_role" {
   description = "Whether to manage the Reader subscription role assignment."
   type        = bool
