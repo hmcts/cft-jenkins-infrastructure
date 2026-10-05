@@ -117,3 +117,9 @@ variable "cft_ptl_subscription_id" {
   type        = string
   default     = "1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
 }
+
+variable "hub_subscription_id" {
+  description = "Subscription ID that hosts the hub network resources."
+  type        = string
+  default     = "fb084706-583f-4c9a-bdab-949aac66ba5c"
+}
