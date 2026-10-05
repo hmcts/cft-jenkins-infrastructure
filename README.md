@@ -34,6 +34,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | Name | Type |
 |------|------|
 | [azuread_group_member.jenkins](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/resources/group_member) | resource |
+| [azuread_group_member.jenkins_aks_admin](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/resources/group_member) | resource |
 | [azurerm_cosmosdb_sql_role_assignment.cosmosdb_data_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
 | [azurerm_key_vault_access_policy.cftptl_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
@@ -45,6 +46,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_role_assignment.private_dns_zone_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.rbac_administrator](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_user_assigned_identity.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/user_assigned_identity) | resource |
+| [azuread_group.aks_administrators](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/data-sources/group) | data source |
 | [azuread_group.directory_readers](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/data-sources/group) | data source |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/client_config) | data source |
 | [azurerm_cosmosdb_account.pipeline_metrics](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/cosmosdb_account) | data source |
@@ -52,6 +54,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_key_vault.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/key_vault) | data source |
 | [azurerm_monitor_action_group.slack_alerts](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/monitor_action_group) | data source |
 | [azurerm_role_definition.rbac_admin_role](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/role_definition) | data source |
+| [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/subscription) | data source |
 | [azurerm_user_assigned_identity.existing](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/user_assigned_identity) | data source |
 
 ## Inputs
@@ -69,6 +72,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_hub_subscription_id"></a> [hub\_subscription\_id](#input\_hub\_subscription\_id) | Subscription ID that hosts the hub network resources. | `string` | `"fb084706-583f-4c9a-bdab-949aac66ba5c"` | no |
 | <a name="input_key_vaults"></a> [key\_vaults](#input\_key\_vaults) | Map of key vaults to which the managed identity should be granted access, keyed by an arbitrary name. Each value should be an object with 'name' and 'resource\_group\_name' properties. | <pre>map(object({<br/>    name                = string<br/>    resource_group_name = string<br/>  }))</pre> | `{}` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location for the managed identity. | `string` | `"UK South"` | no |
+| <a name="input_manage_aks_administrators_group"></a> [manage\_aks\_administrators\_group](#input\_manage\_aks\_administrators\_group) | Whether to manage membership of the per-environment DTS AKS Administrators group. | `bool` | `true` | no |
 | <a name="input_manage_aks_cluster_admin_role"></a> [manage\_aks\_cluster\_admin\_role](#input\_manage\_aks\_cluster\_admin\_role) | Whether to manage the AKS Cluster Admin subscription role assignment. | `bool` | `true` | no |
 | <a name="input_manage_contributor_role"></a> [manage\_contributor\_role](#input\_manage\_contributor\_role) | Whether to manage the Contributor subscription role assignment. | `bool` | `true` | no |
 | <a name="input_manage_reader_role"></a> [manage\_reader\_role](#input\_manage\_reader\_role) | Whether to manage the Reader subscription role assignment. | `bool` | `true` | no |
