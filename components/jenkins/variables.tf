@@ -109,3 +109,22 @@ variable "waf_monitoring_application_object_id" {
   type        = string
   default     = "414c87c4-9f5a-4fcf-b630-91d1c282ace0"
 }
+
+variable "build_archive_storage" {
+  description = "Storage accounts for archived Jenkins builds. The prod account is created in cosmos_subscription_id, in an existing resource group. Leave unset to create none."
+  type = object({
+    nonprod = object({
+      resource_group_name  = string
+      storage_account_name = string
+      containers           = list(string)
+      credential_id        = string
+    })
+    prod = object({
+      resource_group_name  = string
+      storage_account_name = string
+      containers           = list(string)
+      credential_id        = string
+    })
+  })
+  default = null
+}
