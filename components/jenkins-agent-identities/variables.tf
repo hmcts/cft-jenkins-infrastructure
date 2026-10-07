@@ -123,3 +123,27 @@ variable "hub_subscription_id" {
   type        = string
   default     = "fb084706-583f-4c9a-bdab-949aac66ba5c"
 }
+
+variable "build_archive_nonprod_storage_account" {
+  description = "Nonprod Jenkins build archive storage account (in cft_ptl_subscription_id) this identity can write to. Leave unset for none."
+  type = object({
+    name                = string
+    resource_group_name = string
+  })
+  default = null
+}
+
+variable "build_archive_prod_storage_account" {
+  description = "Prod Jenkins build archive storage account (in cosmos_subscription_id) this identity can write to. Leave unset for none."
+  type = object({
+    name                = string
+    resource_group_name = string
+  })
+  default = null
+}
+
+variable "build_archive_role_definition_name" {
+  description = "Role granted to this identity on its build archive storage account."
+  type        = string
+  default     = "Storage Blob Data Contributor"
+}
