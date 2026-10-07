@@ -109,3 +109,70 @@ variable "waf_monitoring_application_object_id" {
   type        = string
   default     = "414c87c4-9f5a-4fcf-b630-91d1c282ace0"
 }
+
+variable "build_archive_storage" {
+  description = "Storage accounts for archived Jenkins builds. The prod account is created in cosmos_subscription_id, in an existing resource group. Leave unset to create none."
+  type = object({
+    nonprod = object({
+      resource_group_name  = string
+      storage_account_name = string
+      containers           = list(string)
+      credential_id        = string
+    })
+    prod = object({
+      resource_group_name  = string
+      storage_account_name = string
+      containers           = list(string)
+      credential_id        = string
+    })
+  })
+  default = null
+}
+
+variable "build_archive_account_kind" {
+  description = "Kind of the build archive storage accounts."
+  type        = string
+  default     = "StorageV2"
+}
+
+variable "build_archive_account_tier" {
+  description = "Tier of the build archive storage accounts."
+  type        = string
+  default     = "Standard"
+}
+
+variable "build_archive_account_replication_type" {
+  description = "Replication type of the build archive storage accounts."
+  type        = string
+  default     = "ZRS"
+}
+
+variable "build_archive_allow_nested_items_to_be_public" {
+  description = "Whether containers in the build archive storage accounts can be made public."
+  type        = bool
+  default     = false
+}
+
+variable "build_archive_retention_days" {
+  description = "Days that deleted blobs and containers in the build archive storage accounts are kept."
+  type        = number
+  default     = 14
+}
+
+variable "build_archive_container_access_type" {
+  description = "Access type of the build archive containers."
+  type        = string
+  default     = "private"
+}
+
+variable "build_archive_role_definition_name" {
+  description = "Role granted to the Jenkins managed identity on the build archive storage accounts."
+  type        = string
+  default     = "Storage Blob Data Contributor"
+}
+
+variable "build_archive_credential_type" {
+  description = "Jenkins credential type set on the build archive Key Vault secrets ('type' tag read by the azure-keyvault plugin)."
+  type        = string
+  default     = "username"
+}

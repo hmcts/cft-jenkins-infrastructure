@@ -42,3 +42,18 @@ cosmos_databases = {
     }
   }
 }
+
+build_archive_storage = {
+  nonprod = {
+    resource_group_name  = "mgmt-buildlog-store-nonprod"
+    storage_account_name = "mgmtbuildlogstorenonprod"
+    containers           = ["jenkins-build-archive", "performance"]
+    credential_id        = "buildlog-storage-account-nonprod"
+  }
+  prod = {
+    resource_group_name  = "mgmt-buildlog-store-prod"
+    storage_account_name = "mgmtbuildlogstoreprod"
+    containers           = ["jenkins-build-archive"]
+    credential_id        = "buildlog-storage-account-prod"
+  }
+}
