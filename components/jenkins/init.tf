@@ -26,6 +26,13 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
+  alias                           = "build_archive_prod"
+  subscription_id                 = var.env == "ptl" ? "8999dec3-0104-4a27-94ee-6588559729d1" : var.subscription_id
+  resource_provider_registrations = "none"
+  features {}
+}
+
+provider "azurerm" {
   features {}
   skip_provider_registration = true
   alias                      = "postgres_network"
