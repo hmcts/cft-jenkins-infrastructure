@@ -128,3 +128,51 @@ variable "build_archive_storage" {
   })
   default = null
 }
+
+variable "build_archive_account_kind" {
+  description = "Kind of the build archive storage accounts."
+  type        = string
+  default     = "StorageV2"
+}
+
+variable "build_archive_account_tier" {
+  description = "Tier of the build archive storage accounts."
+  type        = string
+  default     = "Standard"
+}
+
+variable "build_archive_account_replication_type" {
+  description = "Replication type of the build archive storage accounts."
+  type        = string
+  default     = "ZRS"
+}
+
+variable "build_archive_allow_nested_items_to_be_public" {
+  description = "Whether containers in the build archive storage accounts can be made public."
+  type        = bool
+  default     = false
+}
+
+variable "build_archive_retention_days" {
+  description = "Days that deleted blobs and containers in the build archive storage accounts are kept."
+  type        = number
+  default     = 14
+}
+
+variable "build_archive_container_access_type" {
+  description = "Access type of the build archive containers."
+  type        = string
+  default     = "private"
+}
+
+variable "build_archive_role_definition_name" {
+  description = "Role granted to the Jenkins managed identity on the build archive storage accounts."
+  type        = string
+  default     = "Storage Blob Data Contributor"
+}
+
+variable "build_archive_credential_type" {
+  description = "Jenkins credential type set on the build archive Key Vault secrets ('type' tag read by the azure-keyvault plugin)."
+  type        = string
+  default     = "username"
+}
