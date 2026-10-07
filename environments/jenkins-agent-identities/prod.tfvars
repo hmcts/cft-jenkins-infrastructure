@@ -15,3 +15,8 @@ key_vaults = {
     resource_group_name = "core-infra-prod"
   }
 }
+
+build_archive_prod_storage_account = {
+  name                = "mgmtbuildlogstoreprod"
+  resource_group_name = "mgmt-buildlog-store-prod"
+}

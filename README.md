@@ -39,6 +39,8 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_key_vault_access_policy.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_role_assignment.additional_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.aks_cluster_admin](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
+| [azurerm_role_assignment.build_archive_nonprod](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
+| [azurerm_role_assignment.build_archive_prod](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.monitoring_reader](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.network_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/role_assignment) | resource |
@@ -52,6 +54,8 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | [azurerm_key_vault.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/key_vault) | data source |
 | [azurerm_monitor_action_group.slack_alerts](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/monitor_action_group) | data source |
 | [azurerm_role_definition.rbac_admin_role](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/role_definition) | data source |
+| [azurerm_storage_account.build_archive_nonprod](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/storage_account) | data source |
+| [azurerm_storage_account.build_archive_prod](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/storage_account) | data source |
 | [azurerm_user_assigned_identity.existing](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/data-sources/user_assigned_identity) | data source |
 
 ## Inputs
@@ -60,6 +64,9 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 |------|-------------|------|---------|:--------:|
 | <a name="input_additional_subscription_ids"></a> [additional\_subscription\_ids](#input\_additional\_subscription\_ids) | Additional subscription IDs for managed identity and subscription-level role assignments. | `list(string)` | `[]` | no |
 | <a name="input_alerts_subscription_id"></a> [alerts\_subscription\_id](#input\_alerts\_subscription\_id) | Subscription ID that hosts the Slack alerts resource group. | `string` | `"1baf5470-1c3e-40d3-a6f7-74bfbce4b348"` | no |
+| <a name="input_build_archive_nonprod_storage_account"></a> [build\_archive\_nonprod\_storage\_account](#input\_build\_archive\_nonprod\_storage\_account) | Nonprod Jenkins build archive storage account (in cft\_ptl\_subscription\_id) this identity can write to. Leave unset for none. | <pre>object({<br/>    name                = string<br/>    resource_group_name = string<br/>  })</pre> | `null` | no |
+| <a name="input_build_archive_prod_storage_account"></a> [build\_archive\_prod\_storage\_account](#input\_build\_archive\_prod\_storage\_account) | Prod Jenkins build archive storage account (in cosmos\_subscription\_id) this identity can write to. Leave unset for none. | <pre>object({<br/>    name                = string<br/>    resource_group_name = string<br/>  })</pre> | `null` | no |
+| <a name="input_build_archive_role_definition_name"></a> [build\_archive\_role\_definition\_name](#input\_build\_archive\_role\_definition\_name) | Role granted to this identity on its build archive storage account. | `string` | `"Storage Blob Data Contributor"` | no |
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | Compatibility variable for shared pipeline template. | `string` | n/a | yes |
 | <a name="input_cft_ptl_subscription_id"></a> [cft\_ptl\_subscription\_id](#input\_cft\_ptl\_subscription\_id) | Subscription ID for the CFT PTL environment. | `string` | `"1baf5470-1c3e-40d3-a6f7-74bfbce4b348"` | no |
 | <a name="input_cosmos_subscription_id"></a> [cosmos\_subscription\_id](#input\_cosmos\_subscription\_id) | Subscription containing cosmos db for pipeline metrics | `string` | n/a | yes |

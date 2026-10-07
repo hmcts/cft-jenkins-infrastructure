@@ -6,6 +6,7 @@ This component manages one Jenkins VM-agent managed identity per run, plus requi
 - `Contributor` on the target environment subscription
 - `Azure Kubernetes Service Cluster Admin Role` on the target environment subscription
 - `Private DNS Zone Contributor` on the shared private DNS resource group in `reform-cft-mgmt`
+- `Storage Blob Data Contributor` on the Jenkins build archive storage account for its environment (`build_archive_nonprod_storage_account` / `build_archive_prod_storage_account` in the tfvars)
 
 ## Environment tfvars
 `environments/jenkins-agent-identities/` contains one tfvars file per CFT environment:

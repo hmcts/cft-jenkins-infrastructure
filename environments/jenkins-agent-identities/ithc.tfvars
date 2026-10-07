@@ -14,3 +14,8 @@ key_vaults = {
     resource_group_name = "cnp-core-infra"
   }
 }
+
+build_archive_nonprod_storage_account = {
+  name                = "mgmtbuildlogstorenonprod"
+  resource_group_name = "mgmt-buildlog-store-nonprod"
+}
