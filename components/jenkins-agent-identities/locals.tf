@@ -43,4 +43,9 @@ locals {
     for name, def in data.azurerm_role_definition.rbac_admin_role :
     name => element(split("/", def.id), length(split("/", def.id)) - 1)
   }
+
+  rbac_admin_resource_group_role_guids = {
+    for name, def in data.azurerm_role_definition.rbac_admin_resource_group_role :
+    name => element(split("/", def.id), length(split("/", def.id)) - 1)
+  }
 }

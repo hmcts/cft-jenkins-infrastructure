@@ -82,3 +82,28 @@ resource "azurerm_role_assignment" "rbac_administrator" {
     )
   EOT
 }
+
+resource "azurerm_role_assignment" "rbac_administrator_resource_group" {
+  for_each = var.rbac_admin_resource_group_roles
+
+  scope                = "/subscriptions/${var.subscription_id}/resourceGroups/${each.key}"
+  role_definition_name = "Role Based Access Control Administrator"
+  description          = "Allows this identity to assign these roles within ${each.key}: ${join(", ", each.value)}"
+  principal_id         = local.principal_id
+  condition_version    = "2.0"
+  condition            = <<-EOT
+    (
+      !(ActionMatches{'Microsoft.Authorization/roleAssignments/write'})
+      OR
+      @Request[Microsoft.Authorization/roleAssignments:RoleDefinitionId]
+        ForAnyOfAnyValues:GuidEquals {${join(", ", [for role in each.value : local.rbac_admin_resource_group_role_guids[role]])}}
+    )
+    AND
+    (
+      !(ActionMatches{'Microsoft.Authorization/roleAssignments/delete'})
+      OR
+      @Resource[Microsoft.Authorization/roleAssignments:RoleDefinitionId]
+        ForAnyOfAnyValues:GuidEquals {${join(", ", [for role in each.value : local.rbac_admin_resource_group_role_guids[role]])}}
+    )
+  EOT
+}

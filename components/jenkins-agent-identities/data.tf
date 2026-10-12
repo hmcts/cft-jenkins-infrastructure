@@ -30,3 +30,10 @@ data "azurerm_role_definition" "rbac_admin_role" {
   name  = each.value
   scope = "/subscriptions/${var.subscription_id}"
 }
+
+data "azurerm_role_definition" "rbac_admin_resource_group_role" {
+  for_each = toset(flatten(values(var.rbac_admin_resource_group_roles)))
+
+  name  = each.value
+  scope = "/subscriptions/${var.subscription_id}"
+}

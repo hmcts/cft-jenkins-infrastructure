@@ -81,6 +81,17 @@ variable "rbac_admin_roles" {
   default     = ["Storage Account Contributor", "Storage Blob Data Contributor", "Storage Blob Data Reader", "Cognitive Services OpenAI User", "Cognitive Services User", "Reader", "PostgreSQL Flexible Server Long Term Retention Backup Role", "Cognitive Services User", "Cognitive Services Speech User"]
 }
 
+variable "rbac_admin_resource_group_roles" {
+  description = "Additional roles the identity may assign within named resource groups in its environment subscription. Does not expand the subscription-wide delegation."
+  type        = map(list(string))
+  default     = {}
+
+  validation {
+    condition     = alltrue([for roles in values(var.rbac_admin_resource_group_roles) : length(roles) > 0])
+    error_message = "Each resource group delegation must contain at least one role."
+  }
+}
+
 variable "private_dns_subscription_id" {
   description = "Subscription ID that hosts the shared private DNS zones used by Jenkins deployments."
   type        = string
