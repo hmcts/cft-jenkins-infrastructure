@@ -23,7 +23,9 @@ That means the identity can only grant that role specifically over any resources
 
 In the case of Jenkins, the identity used by the agents can grant Storage Account Contributor access to any resource it creates but it cannot grant Owner.
 
-To define the roles Jenkins can assign, add its name to `rbac_admin_roles` in the tfvars file.
+All environment identities use the `rbac_admin_roles` default in `variables.tf` unless an environment tfvars file overrides it. The default includes Contributor, Locks Contributor, Virtual Machine User Login and Virtual Machine Administrator Login for standard infrastructure deployments. The delegation is at subscription scope, so these roles can be assigned throughout each identity's environment subscription. Review additions to this list as access-control changes.
+
+To override the delegated roles for a particular identity, set `rbac_admin_roles` in its tfvars file.
 
 ```
 rbac_admin_roles = ["Storage Account Contributor", "Storage Blob Data Contributor"]
