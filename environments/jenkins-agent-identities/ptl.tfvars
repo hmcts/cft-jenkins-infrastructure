@@ -8,3 +8,7 @@ create_identity                      = false
 manage_contributor_role              = false
 manage_aks_cluster_admin_role        = false
 cosmos_subscription_id               = "8999dec3-0104-4a27-94ee-6588559729d1"
+
+api_management_service_ids = [
+	"/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7/resourceGroups/cft-aat-network-rg/providers/Microsoft.ApiManagement/service/cft-api-mgmt-stg"
+]

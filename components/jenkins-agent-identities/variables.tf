@@ -36,6 +36,12 @@ variable "additional_subscription_ids" {
   default     = []
 }
 
+variable "api_management_service_ids" {
+  description = "API Management service resource IDs on which this identity needs API Management Service Contributor access."
+  type        = list(string)
+  default     = []
+}
+
 variable "cosmos_subscription_id" {
   description = "Subscription containing cosmos db for pipeline metrics"
   type        = string
