@@ -88,8 +88,6 @@ variable "rbac_admin_roles" {
     "PostgreSQL Flexible Server Long Term Retention Backup Role",
     "Cognitive Services User",
     "Cognitive Services Speech User",
-    "Contributor",
-    "Locks Contributor",
     "Virtual Machine User Login",
     "Virtual Machine Administrator Login",
   ]
