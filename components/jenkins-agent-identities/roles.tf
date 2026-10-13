@@ -23,14 +23,6 @@ resource "azurerm_role_assignment" "additional_contributor" {
   principal_id         = local.principal_id
 }
 
-resource "azurerm_role_assignment" "api_management_service_contributor" {
-  for_each = toset(var.api_management_service_ids)
-
-  scope                = each.value
-  role_definition_name = "API Management Service Contributor"
-  principal_id         = local.principal_id
-}
-
 resource "azurerm_role_assignment" "network_contributor" {
 
   scope                = "/subscriptions/${var.hub_subscription_id}"
