@@ -22,10 +22,10 @@ cosmos_databases = {
         partition_key_path = "/_partitionKey"
         ignore_default_ttl = true
       }
-      "github-app-rate-limits" = {
-        partition_key_path = "/_credential_id"
-        ignore_default_ttl = true   # optional, defaults to false
-      }
+      # "github-app-rate-limits" = {
+      #   partition_key_path = "/credential_id"
+      #   ignore_default_ttl = true   # optional, defaults to false
+      # }
     }
   }
   sds = {
@@ -42,10 +42,10 @@ cosmos_databases = {
         partition_key_path = "/_partitionKey"
         ignore_default_ttl = true
       }
-      "github-app-rate-limits" = {
-        partition_key_path = "/_credential_id"
-        ignore_default_ttl = true   # optional, defaults to false
-      }
+      # "github-app-rate-limits" = {
+      #   partition_key_path = "/credential_id"
+      #   ignore_default_ttl = true   # optional, defaults to false
+      # }
     }
   }
 }
