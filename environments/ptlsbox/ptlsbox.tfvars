@@ -43,7 +43,7 @@ cosmos_databases = {
         ignore_default_ttl = true
       }
       "github-app-rate-limits" = {
-        partition_key_path = "/_partitionKey"
+        partition_key_path = "/_credential_id"
         ignore_default_ttl = true   # optional, defaults to false
       }
     }
