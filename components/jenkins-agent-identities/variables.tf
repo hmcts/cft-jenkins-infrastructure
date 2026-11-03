@@ -88,6 +88,9 @@ variable "rbac_admin_roles" {
     "PostgreSQL Flexible Server Long Term Retention Backup Role",
     "Cognitive Services User",
     "Cognitive Services Speech User",
+    "Azure Service Bus Data Sender",
+    "Azure Service Bus Data Receiver",
+    "Azure Service Bus Data Owner",
     "Virtual Machine User Login",
     "Virtual Machine Administrator Login",
   ]
