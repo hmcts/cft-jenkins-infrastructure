@@ -91,3 +91,30 @@ resource "azurerm_key_vault_access_policy" "cftptl_vault" {
     "Import"
   ]
 }
+
+// Martha Infra https://github.com/hmcts/martha-infra needs to be able to read the Dynatrace token from the CNP infra-vault-nonprod/prod KV
+resource "azurerm_key_vault_access_policy" "heritage_wif_infra_vault" {
+  for_each = {
+    for key, vault in var.key_vaults : key => vault
+    if vault.heritage_wif_object_id != null
+  }
+
+  key_vault_id = data.azurerm_key_vault.infra_vault[each.key].id
+  tenant_id    = data.azurerm_client_config.current.tenant_id
+  object_id    = each.value.heritage_wif_object_id
+
+  key_permissions = [
+    "Get",
+    "List"
+  ]
+
+  secret_permissions = [
+    "Get",
+    "List"
+  ]
+
+  certificate_permissions = [
+    "Get",
+    "List"
+  ]
+}

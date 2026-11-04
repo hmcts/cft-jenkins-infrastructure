@@ -10,8 +10,9 @@ cosmos_subscription_id               = "8999dec3-0104-4a27-94ee-6588559729d1"
 
 key_vaults = {
   "infra-vault-nonprod" = {
-    name                = "infra-vault-nonprod"
-    resource_group_name = "cnp-core-infra"
+    name                   = "infra-vault-nonprod"
+    resource_group_name    = "cnp-core-infra"
+    heritage_wif_object_id = "427cfe70-5fd2-4a83-82e1-4ea22c27c5c8"
   }
 }
 
