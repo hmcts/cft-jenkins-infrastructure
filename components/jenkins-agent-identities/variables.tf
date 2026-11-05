@@ -93,6 +93,7 @@ variable "rbac_admin_roles" {
     "Azure Service Bus Data Owner",
     "Virtual Machine User Login",
     "Virtual Machine Administrator Login",
+    "Key Vault Secrets User",
   ]
 }
 
