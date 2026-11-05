@@ -113,10 +113,11 @@ variable "tags" {
 }
 
 variable "key_vaults" {
-  description = "Map of key vaults to which the managed identity should be granted access, keyed by an arbitrary name. Each value should be an object with 'name' and 'resource_group_name' properties."
+  description = "Map of Key Vaults to which the managed identity should be granted access, keyed by an arbitrary name. heritage_wif_object_id optionally grants a Heritage WIF principal access."
   type = map(object({
-    name                = string
-    resource_group_name = string
+    name                   = string
+    resource_group_name    = string
+    heritage_wif_object_id = optional(string)
   }))
   default = {}
 }

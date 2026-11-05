@@ -11,8 +11,9 @@ hub_subscription_id                  = "0978315c-75fe-4ada-9d11-1eb5e0e0b214"
 
 key_vaults = {
   "infra-vault-prod" = {
-    name                = "infra-vault-prod"
-    resource_group_name = "core-infra-prod"
+    name                   = "infra-vault-prod"
+    resource_group_name    = "core-infra-prod"
+    heritage_wif_object_id = "1c46fd39-1c97-4196-bf4f-2a4cb59cbdb7"
   }
 }
 
