@@ -82,3 +82,31 @@ resource "azurerm_role_assignment" "rbac_administrator" {
     )
   EOT
 }
+
+# The identity deploys into its environment's CFTAPPS subscription (which holds the environment's vnet), so the
+# same delegated role assignment rights are needed there. Only the subscriptions listed in
+# rbac_admin_subscription_ids are covered, not every additional subscription.
+resource "azurerm_role_assignment" "additional_rbac_administrator" {
+  for_each = length(var.rbac_admin_roles) > 0 ? toset(var.rbac_admin_subscription_ids) : toset([])
+
+  scope                = "/subscriptions/${each.value}"
+  role_definition_name = "Role Based Access Control Administrator"
+  description          = "Allows this identity to assign the following roles: ${join(", ", var.rbac_admin_roles)}"
+  principal_id         = local.principal_id
+  condition_version    = "2.0"
+  condition            = <<-EOT
+    (
+      !(ActionMatches{'Microsoft.Authorization/roleAssignments/write'})
+      OR
+      @Request[Microsoft.Authorization/roleAssignments:RoleDefinitionId]
+        ForAnyOfAnyValues:GuidEquals {${join(", ", values(local.rbac_admin_role_guids))}}
+    )
+    AND
+    (
+      !(ActionMatches{'Microsoft.Authorization/roleAssignments/delete'})
+      OR
+      @Resource[Microsoft.Authorization/roleAssignments:RoleDefinitionId]
+        ForAnyOfAnyValues:GuidEquals {${join(", ", values(local.rbac_admin_role_guids))}}
+    )
+  EOT
+}
