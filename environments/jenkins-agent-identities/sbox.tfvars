@@ -1,6 +1,7 @@
 env                                  = "sbox"
 subscription_id                      = "bf308a5c-0624-4334-8ff8-8dca9fd43783"
 additional_subscription_ids          = ["b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"] # DCD-CFTAPPS-SBOX
+rbac_admin_subscription_ids          = ["b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"] # DCD-CFTAPPS-SBOX
 private_dns_subscription_id          = "1497c3d7-ab6d-4bb7-8a10-b51d03189ee3"
 private_dns_resource_group_name      = "core-infra-intsvc-rg"
 managed_identity_name                = "jenkins-sbox-mi"

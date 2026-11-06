@@ -36,6 +36,12 @@ variable "additional_subscription_ids" {
   default     = []
 }
 
+variable "rbac_admin_subscription_ids" {
+  description = "Subscription IDs, in addition to subscription_id, on which the identity gets the delegated Role Based Access Control Administrator assignment. Keep to the environment's own subscriptions."
+  type        = list(string)
+  default     = []
+}
+
 variable "cosmos_subscription_id" {
   description = "Subscription containing cosmos db for pipeline metrics"
   type        = string
