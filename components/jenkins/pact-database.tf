@@ -18,7 +18,8 @@ module "postgresql" {
     azurerm.postgres_network = azurerm.postgres_network
   }
 
-  source = "git::https://github.com/hmcts/terraform-module-postgresql-flexible.git?ref=master"
+  # Preserve PTL HA: DTSPO-33704 disables it outside prod and ignores overrides.
+  source = "git::https://github.com/hmcts/terraform-module-postgresql-flexible.git?ref=dc65f69d0f7afdea16a7ea904ffeadfc0184b658"
   env    = var.env
 
   product       = var.product
