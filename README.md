@@ -35,6 +35,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 |------|------|
 | [azuread_group_member.jenkins](https://registry.terraform.io/providers/hashicorp/azuread/3.8.0/docs/resources/group_member) | resource |
 | [azurerm_cosmosdb_sql_role_assignment.cosmosdb_data_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/cosmosdb_sql_role_assignment) | resource |
+| [azurerm_key_vault_access_policy.cftapps_wif_infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.cftptl_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.heritage_wif_infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.infra_vault](https://registry.terraform.io/providers/hashicorp/azurerm/4.37.0/docs/resources/key_vault_access_policy) | resource |
@@ -76,7 +77,7 @@ This respository is responsible for the creation of CFT Jenkins infrastructure u
 | <a name="input_env"></a> [env](#input\_env) | Name of the target CFT environment for this managed identity. | `string` | n/a | yes |
 | <a name="input_expiresAfter"></a> [expiresAfter](#input\_expiresAfter) | Expiration date for common tags. | `string` | `"3000-01-01"` | no |
 | <a name="input_hub_subscription_id"></a> [hub\_subscription\_id](#input\_hub\_subscription\_id) | Subscription ID that hosts the hub network resources. | `string` | `"fb084706-583f-4c9a-bdab-949aac66ba5c"` | no |
-| <a name="input_key_vaults"></a> [key\_vaults](#input\_key\_vaults) | Map of Key Vaults to which the managed identity should be granted access, keyed by an arbitrary name. heritage\_wif\_object\_id optionally grants a Heritage WIF principal access. | <pre>map(object({<br/>    name                   = string<br/>    resource_group_name    = string<br/>    heritage_wif_object_id = optional(string)<br/>  }))</pre> | `{}` | no |
+| <a name="input_key_vaults"></a> [key\_vaults](#input\_key\_vaults) | Map of Key Vaults to which the managed identity should be granted access, keyed by an arbitrary name. heritage\_wif\_object\_id optionally grants a Heritage WIF principal access. | <pre>map(object({<br/>    name                   = string<br/>    resource_group_name    = string<br/>    heritage_wif_object_id = optional(string)<br/>    cftapps_wif_object_id  = optional(string)<br/>  }))</pre> | `{}` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location for the managed identity. | `string` | `"UK South"` | no |
 | <a name="input_manage_aks_cluster_admin_role"></a> [manage\_aks\_cluster\_admin\_role](#input\_manage\_aks\_cluster\_admin\_role) | Whether to manage the AKS Cluster Admin subscription role assignment. | `bool` | `true` | no |
 | <a name="input_manage_contributor_role"></a> [manage\_contributor\_role](#input\_manage\_contributor\_role) | Whether to manage the Contributor subscription role assignment. | `bool` | `true` | no |
