@@ -125,6 +125,7 @@ variable "key_vaults" {
     name                   = string
     resource_group_name    = string
     heritage_wif_object_id = optional(string)
+    cftapps_wif_object_id  = optional(string)
   }))
   default = {}
 }

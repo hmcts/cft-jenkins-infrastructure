@@ -118,3 +118,31 @@ resource "azurerm_key_vault_access_policy" "heritage_wif_infra_vault" {
     "List"
   ]
 }
+
+# Private DNS pipeline uses DCD-CFTAPPS-SBOX-WIF in its pre-check step to get 'azure-devops-sp-token' from this kv
+# This is a common pattern across repos which use this ado library step
+resource "azurerm_key_vault_access_policy" "cftapps_wif_infra_vault" {
+  for_each = {
+    for key, vault in var.key_vaults : key => vault
+    if vault.cftapps_wif_object_id != null
+  }
+
+  key_vault_id = data.azurerm_key_vault.infra_vault[each.key].id
+  tenant_id    = data.azurerm_client_config.current.tenant_id
+  object_id    = each.value.cftapps_wif_object_id
+
+  key_permissions = [
+    "Get",
+    "List"
+  ]
+
+  secret_permissions = [
+    "Get",
+    "List"
+  ]
+
+  certificate_permissions = [
+    "Get",
+    "List"
+  ]
+}

@@ -14,6 +14,7 @@ key_vaults = {
     name                   = "infra-vault-nonprod"
     resource_group_name    = "cnp-core-infra"
     heritage_wif_object_id = "427cfe70-5fd2-4a83-82e1-4ea22c27c5c8"
+    cftapps_wif_object_id  = "3fba25ca-a5be-4176-955b-16e78481e508"
   }
 }
 
