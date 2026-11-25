@@ -40,6 +40,8 @@ module "postgresql" {
   # setting to en_US means we can skip migrating the data as the collation here doesn't matter much
   collation = "en_US.utf8"
 
+  pgsql_sku = var.env == "ptl" ? "GP_Standard_D4s_v3" : "GP_Standard_D2s_v3"
+
   # The ID of the principal to be granted admin access to the database server, should be the principal running this normally
   admin_user_object_id          = data.azurerm_client_config.this.object_id
   preserve_legacy_jenkins_admin = false
