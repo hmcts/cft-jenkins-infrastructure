@@ -100,6 +100,7 @@ variable "rbac_admin_roles" {
     "Virtual Machine User Login",
     "Virtual Machine Administrator Login",
     "Key Vault Secrets User",
+    "Monitoring Metrics Publisher",
   ]
 }
 
